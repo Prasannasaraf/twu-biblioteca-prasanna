@@ -28,6 +28,14 @@ public class ViewTest {
         assertEquals("Welcome to Biblioteca\n", outContent.toString());
     }
 
+    @Test
+    public void shouldDisplayListOfBooks() {
+        View view = new View();
+        BookList booklist = new BookList();
+        view.displayListOfBooks(booklist);
+        assertEquals("Red Jhon\nSuccess\n", outContent.toString());
+    }
+
     @After
     public void cleanUpStreams() {
         System.setOut(original);

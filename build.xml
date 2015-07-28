@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="biblioteca" default="run" basedir=".">
+
+    <target name="compile">
+        <javac srcdir="src;test" destdir="out" includeantruntime="false" classpath="lib/junit-4.11.jar">
+        </javac>
+    </target>
+
+    <target name="runjunit" depends="compile">
+        <junit haltonfailure="true" printsummary="true" showoutput="yes">
+            <classpath path="out" location="lib/junit-4.11.jar">
+            </classpath>
+            <test name="com.twu.biblioteca.ViewTest"/>
+        </junit>
+    </target>
+
+    <target name="createjar" depends="runjunit">
+        <jar destfile="lib/app.jar"
+             basedir="out"
+             excludes="**/Test.class"
+                />
+    </target>
+
+    <target name="run" depends="createjar">
+        <java classname="com.twu.biblioteca.BibliotecaApp">
+            <arg value="-h"/>
+            <classpath>
+                <pathelement location="lib/app.jar"/>
+                <pathelement path="${java.class.path}"/>
+            </classpath>
+        </java>
+    </target>
+
+</project>

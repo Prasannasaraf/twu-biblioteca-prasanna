@@ -24,4 +24,10 @@ public class View {
     public void displayInvalidOption() {
         System.out.println("Select a valid option!");
     }
+
+    public void displayMenu() {
+        System.out.println("[0] Quit");
+        System.out.println("[1] List Books");
+        System.out.println("[2] Remove Books");
+    }
 }

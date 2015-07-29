@@ -55,6 +55,17 @@ public class ViewTest {
         assertEquals("Select a valid option!\n", outContent.toString());
     }
 
+    @Test
+    public void shouldDisplayMenuOptions() {
+        View view = new View();
+
+        view.displayMenu();
+
+        assertEquals("[0] Quit\n" +
+                "[1] List Books\n" +
+                "[2] Remove Books\n",outContent.toString());
+    }
+
     @After
     public void cleanUpStreams() {
         System.setOut(original);

@@ -16,7 +16,6 @@ public class BibliotecaController {
         String userInput;
         while (true) {
             userInput = view.getInput();
-            System.out.println(userInput);
             switch (userInput) {
                 case "1":
                     view.displayListOfBooks(library);

@@ -12,4 +12,13 @@ public class Library {
     public static ArrayList<Book> getBooks() {
         return books;
     }
+
+    public void removeBook(String name) {
+        for (Book book : books) {
+            if (book.getName().equals(name)) {
+                books.remove(book);
+                break;
+            }
+        }
+    }
 }

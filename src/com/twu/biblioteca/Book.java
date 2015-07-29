@@ -30,4 +30,12 @@ public class Book {
     public int hashCode() {
         return name.hashCode();
     }
+
+    public String getYear() {
+        return year;
+    }
+
+    public String getAuthor() {
+        return author;
+    }
 }

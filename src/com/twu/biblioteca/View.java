@@ -7,8 +7,9 @@ public class View {
 
     public void displayListOfBooks(Library library) {
         System.out.println("List of Books");
+        System.out.printf("%-15s %-15s %-5s\n","Name","Author","Year");
         for (Book book : library.getBooks()) {
-            System.out.println(book.getName());
+            System.out.printf("%-15s %-15s %-5s\n",book.getName(),book.getAuthor(),book.getYear());
         }
     }
 }

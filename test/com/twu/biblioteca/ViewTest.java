@@ -42,7 +42,7 @@ public class ViewTest {
         assertEquals("List of Books\nName            Author          Year \nRed Jhon        Martin          2004 \nSuccess         Ricky           1994 \n", outContent.toString());
     }
 
-    @Test
+        @Test
     public void shouldDisplayInvalidOption() {
         View view = new View();
 

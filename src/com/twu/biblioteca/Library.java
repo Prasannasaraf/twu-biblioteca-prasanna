@@ -5,10 +5,10 @@ import java.util.ArrayList;
 public class Library {
     private static ArrayList<Book> books;
 
-    public Library() {
+    public Library(Book book1,Book book2) {
         books  = new ArrayList<Book>();
-        books.add(new Book("Red Jhon", "Martin", "2004"));
-        books.add(new Book("Success", "Ricky", "1994"));
+        books.add(book1);
+        books.add(book2);
     }
 
     public static ArrayList<Book> getBooks() {

@@ -21,8 +21,10 @@ public class BibliotecaController {
                 case "1":
                     view.displayListOfBooks(library);
                     break;
+                case "Quit":
+                    return;
                 default:
-                    return ;
+                    view.displayInvalidOption();
             }
         }
     }

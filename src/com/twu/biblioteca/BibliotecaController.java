@@ -13,6 +13,17 @@ public class BibliotecaController {
 
     public void start() {
         view.welcomeMessage();
-        view.displayListOfBooks(library);
+        String userInput;
+        while (true) {
+            userInput = view.getInput();
+            System.out.println(userInput);
+            switch (userInput) {
+                case "1":
+                    view.displayListOfBooks(library);
+                    break;
+                default:
+                    return ;
+            }
+        }
     }
 }

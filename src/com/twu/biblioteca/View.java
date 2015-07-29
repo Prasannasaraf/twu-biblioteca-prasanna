@@ -20,4 +20,8 @@ public class View {
         Scanner scanner = new Scanner(System.in);
         return scanner.next();
     }
+
+    public void displayInvalidOption() {
+        System.out.println("Select a valid option!");
+    }
 }

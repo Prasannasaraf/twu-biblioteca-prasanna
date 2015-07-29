@@ -33,11 +33,22 @@ public class ViewTest {
     @Test
     public void shouldDisplayListOfBooks() {
         View view = new View();
-        Library library = new Library();
+        Book book1 = new Book("Red Jhon", "Martin", "2004");
+        Book book2 = new Book("Success", "Ricky", "1994");
+        Library library = new Library(book1,book2);
 
         view.displayListOfBooks(library);
 
         assertEquals("List of Books\nName            Author          Year \nRed Jhon        Martin          2004 \nSuccess         Ricky           1994 \n", outContent.toString());
+    }
+
+    @Test
+    public void shouldDisplayInvalidOption() {
+        View view = new View();
+
+        view.displayInvalidOption();
+
+        assertEquals("Select a valid option!\n",outContent.toString());
     }
 
     @After

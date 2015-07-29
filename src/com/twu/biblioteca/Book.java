@@ -1,10 +1,14 @@
 package com.twu.biblioteca;
 
 public class Book {
+    private final String author;
+    private final String year;
     private String name;
 
-    public Book(String name) {
+    public Book(String name, String author, String year) {
         this.name = name;
+        this.author = author;
+        this.year = year;
     }
 
     public String getName() {

@@ -5,9 +5,9 @@ public class View {
         System.out.println("Welcome to Biblioteca");
     }
 
-    public void displayListOfBooks(BookList booklist) {
+    public void displayListOfBooks(Library library) {
         System.out.println("List of Books");
-        for (Book book : booklist.getBooks()) {
+        for (Book book : library.getBooks()) {
             System.out.println(book.getName());
         }
     }

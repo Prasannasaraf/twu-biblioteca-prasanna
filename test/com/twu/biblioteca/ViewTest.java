@@ -33,9 +33,9 @@ public class ViewTest {
     @Test
     public void shouldDisplayListOfBooks() {
         View view = new View();
-        BookList booklist = new BookList();
+        Library library = new Library();
 
-        view.displayListOfBooks(booklist);
+        view.displayListOfBooks(library);
 
         assertEquals("List of Books\nRed Jhon\nSuccess\n", outContent.toString());
     }

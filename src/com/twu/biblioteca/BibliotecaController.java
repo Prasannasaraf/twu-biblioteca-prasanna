@@ -4,15 +4,15 @@ package com.twu.biblioteca;
 public class BibliotecaController {
 
     private final View view;
-    private final BookList bookList;
+    private final Library library;
 
-    public BibliotecaController(View view, BookList bookList) {
+    public BibliotecaController(View view, Library library) {
         this.view  = view;
-        this.bookList = bookList;
+        this.library = library;
     }
 
     public void start() {
         view.welcomeMessage();
-        view.displayListOfBooks(bookList);
+        view.displayListOfBooks(library);
     }
 }

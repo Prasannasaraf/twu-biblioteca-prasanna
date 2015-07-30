@@ -9,9 +9,10 @@ public class BibliotecaParser {
                 return new DisplayBooks(view,library);
             case "2":
                 return new CheckOut(view,library);
+            case "3":
+                return new CheckIn(view,library);
             default:
                 return new InvalidOption(view);
         }
-
     }
 }

@@ -43,4 +43,8 @@ public class View {
     public void displaySuccessfulCheckIn() {
         System.out.println("Thank you for returning the book.");
     }
+
+    public void displayUnSuccessfulCheckIn() {
+        System.out.println("That is not a valid book to return.");
+    }
 }

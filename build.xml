@@ -20,6 +20,7 @@
             <test name="com.twu.biblioteca.LibraryTest"/>
             <test name="com.twu.biblioteca.BookTest"/>
             <test name="com.twu.biblioteca.CheckOutTest"/>
+            <test name="com.twu.biblioteca.CheckInTest"/>
             <test name="com.twu.biblioteca.DisplayBooksTest"/>
             <test name="com.twu.biblioteca.InvalidOptionTest"/>
             <test name="com.twu.biblioteca.BibliotecaParserTest"/>

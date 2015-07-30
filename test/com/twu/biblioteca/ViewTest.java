@@ -95,6 +95,15 @@ public class ViewTest {
         assertEquals("Thank you for returning the book.\n", outContent.toString());
     }
 
+    @Test
+    public void shouldDisplayUnSuccessfulCheckIn() {
+        View view = new View();
+
+        view.displayUnSuccessfulCheckIn();
+
+        assertEquals("That is not a valid book to return.\n", outContent.toString());
+    }
+
     @After
     public void cleanUpStreams() {
         System.setOut(original);

@@ -10,6 +10,7 @@ import static org.junit.Assert.assertEquals;
 public class LibraryTest {
     ArrayList<Book> books;
     ArrayList<Book> books1;
+    ArrayList<Book> checkedOutBooks;
     Book book1;
     Book book2;
     Book book3;
@@ -24,12 +25,12 @@ public class LibraryTest {
         book4 = new Book("Success", "Ricky", "1994");
         books = new ArrayList<Book>();
         books1 = new ArrayList<Book>();
+        checkedOutBooks = new ArrayList<Book>();
         books.add(book1);
         books.add(book2);
         books1.add(book3);
         books1.add(book4);
-        library = new Library(books);
-
+        library = new Library(books, checkedOutBooks);
     }
 
     @Test

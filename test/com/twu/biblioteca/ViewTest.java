@@ -37,9 +37,10 @@ public class ViewTest {
         Book book1 = new Book("Red Jhon", "Martin", "2004");
         Book book2 = new Book("Success", "Ricky", "1994");
         ArrayList<Book> books = new ArrayList<Book>();
+        ArrayList<Book> checkOutBooks = new ArrayList<Book>();
         books.add(book1);
         books.add(book2);
-        Library library = new Library(books);
+        Library library = new Library(books, checkOutBooks);
 
         view.displayListOfBooks(library);
 

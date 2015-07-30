@@ -6,9 +6,10 @@ import java.util.ArrayList;
 //Library has Books.
 public class Library {
     private static ArrayList<Book> books;
-
-    public Library(ArrayList<Book> books) {
+    private static ArrayList<Book> checkedoutBooks;
+    public Library(ArrayList<Book> books,ArrayList<Book> checkedoutBooks) {
         this.books = books;
+        this.checkedoutBooks = checkedoutBooks;
     }
 
     public static ArrayList<Book> getBooks() {
@@ -19,6 +20,7 @@ public class Library {
         for (Book book : books) {
             if (book.getName().equals(Bookname)) {
                 books.remove(book);
+                checkedoutBooks.add(book);
                 return true;
             }
         }

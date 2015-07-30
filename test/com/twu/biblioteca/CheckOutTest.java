@@ -7,6 +7,7 @@ import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 public class CheckOutTest {
+
     @Test
     public void checkOutShouldCallCheckOutBook() {
         Library mockedLibrary = mock(Library.class);
@@ -16,6 +17,21 @@ public class CheckOutTest {
 
         when(mockedView.getInput()).thenReturn("Success");
         checkOut.execute();
+
         verify(mockedLibrary).checkOutBook("Success");
+    }
+
+    @Test
+    public void checkOutShouldCallDisplaySuccessfulCheckout() {
+        Library mockedLibrary = mock(Library.class);
+        View mockedView = mock(View.class);
+
+        CheckOut checkOut = new CheckOut(mockedView, mockedLibrary);
+
+        when(mockedLibrary.checkOutBook("Success")).thenReturn(true);
+        when(mockedView.getInput()).thenReturn("Success");
+        checkOut.execute();
+
+        verify(mockedView).displaySuccessfulCheckout();
     }
 }

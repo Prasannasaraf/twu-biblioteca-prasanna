@@ -26,4 +26,15 @@ public class Library {
         }
         return false;
     }
+
+    public boolean checkInBook(String Bookname) {
+        for (Book book : checkedoutBooks) {
+            if (book.getName().equals(Bookname)) {
+                checkedoutBooks.remove(book);
+                books.add(book);
+                return true;
+            }
+        }
+        return false;
+    }
 }

@@ -20,4 +20,18 @@ public class CheckInTest {
 
         verify(mockedLibrary).checkInBook("Success");
     }
+
+    @Test
+    public void checkInShouldCallDisplaySuccessfulCheckout() {
+        Library mockedLibrary = mock(Library.class);
+        View mockedView = mock(View.class);
+
+        CheckIn checkIn = new CheckIn(mockedView, mockedLibrary);
+
+        when(mockedLibrary.checkInBook("Success")).thenReturn(true);
+        when(mockedView.getInput()).thenReturn("Success");
+        checkIn.execute();
+
+        verify(mockedView).displaySuccessfulCheckIn();
+    }
 }

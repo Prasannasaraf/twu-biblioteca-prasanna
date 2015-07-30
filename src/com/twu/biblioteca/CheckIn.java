@@ -1,6 +1,7 @@
 package com.twu.biblioteca;
 
 
+//Checks In book to Library
 public class CheckIn implements Operations {
     private final View view;
     private final Library library;

@@ -2,6 +2,8 @@ package com.twu.biblioteca;
 
 import java.util.Scanner;
 
+
+//Displays To console
 public class View {
 
     public void welcomeMessage() {

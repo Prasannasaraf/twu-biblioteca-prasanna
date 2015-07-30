@@ -33,4 +33,13 @@ public class BibliotecaParserTest {
 
         assertEquals(Quit.class, bibliotecaParser.parse("0", view, library).getClass());
     }
+
+    @Test
+    public void shouldGiveCheckoutObject() {
+        BibliotecaParser bibliotecaParser = new BibliotecaParser();
+        View view = Mockito.mock(View.class);
+        Library library = Mockito.mock(Library.class);
+
+        assertEquals(CheckOut.class, bibliotecaParser.parse("2", view, library).getClass());
+    }
 }

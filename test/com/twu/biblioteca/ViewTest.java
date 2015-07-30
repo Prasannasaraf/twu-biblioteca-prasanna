@@ -63,7 +63,7 @@ public class ViewTest {
 
         assertEquals("[0] Quit\n" +
                 "[1] List Books\n" +
-                "[2] Remove Books\n",outContent.toString());
+                "[2] Checkout Book\n",outContent.toString());
     }
 
     @After

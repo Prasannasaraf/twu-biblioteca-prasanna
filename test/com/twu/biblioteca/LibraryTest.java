@@ -2,10 +2,10 @@ package com.twu.biblioteca;
 
 import org.junit.Before;
 import org.junit.Test;
-
 import java.util.ArrayList;
 
 import static org.junit.Assert.assertEquals;
+
 
 public class LibraryTest {
     ArrayList<Book> books;
@@ -38,9 +38,10 @@ public class LibraryTest {
     }
 
     @Test
-    public void shouldRemoveBookFromLibrary() {
-        library.removeBook("Success");
+    public void shouldCheckOutBookFromLibrary() {
+        library.checkOutBook("Success");
         books1.remove(book4);
+
         assertEquals(books1, library.getBooks());
     }
 }

@@ -15,7 +15,7 @@ public class Library {
         return books;
     }
 
-    public void removeBook(String Bookname) {
+    public void checkOutBook(String Bookname) {
         for (Book book : books) {
             if (book.getName().equals(Bookname)) {
                 books.remove(book);

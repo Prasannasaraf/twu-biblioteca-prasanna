@@ -35,10 +35,10 @@ public class BibliotecaControllerTest {
     }
 
     @Test
-    public void menuShouldRemoveBooks() {
+    public void menuShouldCheckOutBooks() {
         when(mockedView.getInput()).thenReturn("2").thenReturn("Success").thenReturn("0");
         bibliotecaController.start();
 
-        verify(mockedLibrary).removeBook("Success");
+        verify(mockedLibrary).checkOutBook("Success");
     }
 }

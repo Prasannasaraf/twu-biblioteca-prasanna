@@ -19,7 +19,9 @@
             <test name="com.twu.biblioteca.ViewTest"/>
             <test name="com.twu.biblioteca.LibraryTest"/>
             <test name="com.twu.biblioteca.BookTest"/>
-            <test name="com.twu.biblioteca.BibliotecaControllerTest"/>
+            <test name="com.twu.biblioteca.CheckOutTest"/>
+            <test name="com.twu.biblioteca.DisplayBooksTest"/>
+            <test name="com.twu.biblioteca.InvalidOptionTest"/>
             <classpath>
                 <pathelement location="out"/>
                 <path refid="classpath"/>

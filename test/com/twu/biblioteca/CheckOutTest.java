@@ -12,7 +12,7 @@ public class CheckOutTest {
         Library mockedLibrary = mock(Library.class);
         View mockedView = mock(View.class);
 
-        CheckOut checkOut = new CheckOut(mockedView,mockedLibrary);
+        CheckOut checkOut = new CheckOut(mockedView, mockedLibrary);
 
         when(mockedView.getInput()).thenReturn("Success");
         checkOut.execute();

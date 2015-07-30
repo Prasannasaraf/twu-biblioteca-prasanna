@@ -7,6 +7,8 @@ public class BibliotecaParser {
                 return new Quit();
             case "1":
                 return new DisplayBooks(view,library);
+            case "2":
+                return new CheckOut(view,library);
             default:
                 return new InvalidOption(view);
         }

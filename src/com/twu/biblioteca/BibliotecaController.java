@@ -8,7 +8,7 @@ public class BibliotecaController {
     private final Library library;
 
     public BibliotecaController(View view, Library library) {
-        this.view  = view;
+        this.view = view;
         this.library = library;
     }
 
@@ -18,18 +18,9 @@ public class BibliotecaController {
         while (true) {
             view.displayMenu();
             userInput = view.getInput();
-            switch (userInput) {
-                case "0":
-                    return;
-                case "1":
-                    view.displayListOfBooks(library);
-                    break;
-                case "2":
-                    library.removeBook(view.getInput());
-                    break;
-                default:
-                    view.displayInvalidOption();
-            }
+            BibliotecaParser parser = new BibliotecaParser();
+            Operations operation = parser.parse(userInput,view,library);
+            operation.execute();
         }
     }
 }

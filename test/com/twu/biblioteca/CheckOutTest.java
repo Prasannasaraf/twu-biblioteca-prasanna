@@ -2,9 +2,7 @@ package com.twu.biblioteca;
 
 import org.junit.Test;
 
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.*;
 
 public class CheckOutTest {
 

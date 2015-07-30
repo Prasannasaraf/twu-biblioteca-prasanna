@@ -6,11 +6,11 @@ public class BibliotecaParser {
             case "0":
                 return new Quit();
             case "1":
-                return new DisplayBooks(view,library);
+                return new DisplayBooks(view, library);
             case "2":
-                return new CheckOut(view,library);
+                return new CheckOut(view, library);
             case "3":
-                return new CheckIn(view,library);
+                return new CheckIn(view, library);
             default:
                 return new InvalidOption(view);
         }

@@ -19,7 +19,7 @@ public class BibliotecaController {
             view.displayMenu();
             userInput = view.getInput();
             BibliotecaParser parser = new BibliotecaParser();
-            Operations operation = parser.parse(userInput,view,library);
+            Operations operation = parser.parse(userInput, view, library);
             operation.execute();
         }
     }

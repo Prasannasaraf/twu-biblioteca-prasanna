@@ -8,7 +8,7 @@ public class BookTest {
 
     @Test
     public void shouldGiveBookName() {
-        Book book = new Book("Red Jhon","Martin ","1994");
+        Book book = new Book("Red Jhon", "Martin ", "1994");
         assertEquals("Red Jhon", book.getName());
     }
 }

@@ -7,7 +7,8 @@ import java.util.ArrayList;
 public class Library {
     private static ArrayList<Book> books;
     private static ArrayList<Book> checkedoutBooks;
-    public Library(ArrayList<Book> books,ArrayList<Book> checkedoutBooks) {
+
+    public Library(ArrayList<Book> books, ArrayList<Book> checkedoutBooks) {
         this.books = books;
         this.checkedoutBooks = checkedoutBooks;
     }

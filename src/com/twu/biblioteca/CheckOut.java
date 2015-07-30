@@ -12,11 +12,9 @@ public class CheckOut implements Operations {
 
     @Override
     public void execute() {
-
         if (library.checkOutBook(view.getInput())) {
             view.displaySuccessfulCheckout();
-        }
-        else {
+        } else {
             view.displayUnSuccessfulCheckout();
         }
     }

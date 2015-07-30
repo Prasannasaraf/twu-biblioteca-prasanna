@@ -63,7 +63,16 @@ public class ViewTest {
 
         assertEquals("[0] Quit\n" +
                 "[1] List Books\n" +
-                "[2] Checkout Book\n",outContent.toString());
+                "[2] Checkout Book\n", outContent.toString());
+    }
+
+    @Test
+    public void shouldDisplaySuccessfulCheckout() {
+        View view = new View();
+
+        view.displaySuccessfulCheckout();
+
+        assertEquals("Thank you! Enjoy the book\n", outContent.toString());
     }
 
     @After

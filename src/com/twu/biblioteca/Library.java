@@ -2,6 +2,8 @@ package com.twu.biblioteca;
 
 import java.util.ArrayList;
 
+
+//Library has Books.
 public class Library {
     private static ArrayList<Book> books;
 
@@ -13,9 +15,9 @@ public class Library {
         return books;
     }
 
-    public void removeBook(String name) {
+    public void removeBook(String Bookname) {
         for (Book book : books) {
-            if (book.getName().equals(name)) {
+            if (book.getName().equals(Bookname)) {
                 books.remove(book);
                 break;
             }

@@ -18,7 +18,7 @@ public class View {
 
     public String getInput() {
         Scanner scanner = new Scanner(System.in);
-        return scanner.next();
+        return scanner.nextLine();
     }
 
     public void displayInvalidOption() {
@@ -28,6 +28,6 @@ public class View {
     public void displayMenu() {
         System.out.println("[0] Quit");
         System.out.println("[1] List Books");
-        System.out.println("[2] Remove Books");
+        System.out.println("[2] Checkout Book");
     }
 }

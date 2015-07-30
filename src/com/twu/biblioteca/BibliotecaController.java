@@ -1,6 +1,7 @@
 package com.twu.biblioteca;
 
 
+//Controller of application
 public class BibliotecaController {
 
     private final View view;
@@ -15,13 +16,17 @@ public class BibliotecaController {
         view.welcomeMessage();
         String userInput;
         while (true) {
+            view.displayMenu();
             userInput = view.getInput();
             switch (userInput) {
+                case "0":
+                    return;
                 case "1":
                     view.displayListOfBooks(library);
                     break;
-                case "Quit":
-                    return;
+                case "2":
+                    library.removeBook(view.getInput());
+                    break;
                 default:
                     view.displayInvalidOption();
             }

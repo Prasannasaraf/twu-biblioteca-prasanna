@@ -44,4 +44,9 @@ public class LibraryTest {
 
         assertEquals(books1, library.getBooks());
     }
+
+    @Test
+    public void shouldGiveTrueOnSuccessfulCheckout() {
+        assertEquals(true, library.checkOutBook("Success"));
+    }
 }

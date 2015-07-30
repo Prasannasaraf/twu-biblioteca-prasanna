@@ -75,6 +75,15 @@ public class ViewTest {
         assertEquals("Thank you! Enjoy the book\n", outContent.toString());
     }
 
+    @Test
+    public void shouldDisplayUnSuccessfulCheckout() {
+        View view = new View();
+
+        view.displayUnSuccessfulCheckout();
+
+        assertEquals("That book is not available.\n", outContent.toString());
+    }
+
     @After
     public void cleanUpStreams() {
         System.setOut(original);

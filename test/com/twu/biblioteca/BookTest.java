@@ -9,6 +9,13 @@ public class BookTest {
     @Test
     public void shouldGiveBookName() {
         Book book = new Book("Red Jhon", "Martin ", "1994");
-        assertEquals("Red Jhon", book.getName());
+        assertEquals("Red Jhon", book.getTitle());
+    }
+
+    @Test
+    public void shouldGiveTrueWhenTitleIsSame() {
+        Book book = new Book("Red Jhon", "Martin ", "1994");
+
+        assertEquals(true, book.hasName("Red Jhon"));
     }
 }

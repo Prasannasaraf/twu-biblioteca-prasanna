@@ -3,16 +3,16 @@ package com.twu.biblioteca;
 public class Book {
     private final String author;
     private final String year;
-    private String name;
+    private String title;
 
     public Book(String name, String author, String year) {
-        this.name = name;
+        this.title = name;
         this.author = author;
         this.year = year;
     }
 
-    public String getName() {
-        return name;
+    public String getTitle() {
+        return title;
     }
 
     @Override
@@ -22,13 +22,13 @@ public class Book {
 
         Book book = (Book) o;
 
-        return name.equals(book.name);
+        return title.equals(book.title);
 
     }
 
     @Override
     public int hashCode() {
-        return name.hashCode();
+        return title.hashCode();
     }
 
     public String getYear() {
@@ -37,5 +37,11 @@ public class Book {
 
     public String getAuthor() {
         return author;
+    }
+
+    public Boolean hasName(String name) {
+        if (title.equals(name))
+            return true;
+        return false;
     }
 }

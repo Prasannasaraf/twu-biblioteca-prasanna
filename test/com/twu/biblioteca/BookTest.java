@@ -16,6 +16,6 @@ public class BookTest {
     public void shouldGiveTrueWhenTitleIsSame() {
         Book book = new Book("Red Jhon", "Martin ", "1994");
 
-        assertEquals(true, book.hasName("Red Jhon"));
+        assertEquals(true, book.hasTitle("Red Jhon"));
     }
 }

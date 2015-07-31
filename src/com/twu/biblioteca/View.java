@@ -14,7 +14,7 @@ public class View {
         System.out.println("List of Books");
         System.out.printf("%-15s %-15s %-5s\n", "Name", "Author", "Year");
         for (Book book : library.getBooks()) {
-            System.out.printf("%-15s %-15s %-5s\n", book.getName(), book.getAuthor(), book.getYear());
+            System.out.printf("%-15s %-15s %-5s\n", book.getTitle(), book.getAuthor(), book.getYear());
         }
     }
 
@@ -28,10 +28,12 @@ public class View {
     }
 
     public void displayMenu() {
-        System.out.println("[0] Quit");
-        System.out.println("[1] List Books");
-        System.out.println("[2] Checkout Book");
-        System.out.println("[3] CheckIn Book");
+        System.out.println("\n\t\tMenu\n" +
+                "[0] Quit\n" +
+                "[1] List Books\n" +
+                "[2] Checkout Book\n" +
+                "[3] CheckIn Book\n" +
+                "Enter Your Option :");
     }
 
     public void displaySuccessfulCheckout() {

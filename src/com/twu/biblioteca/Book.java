@@ -1,5 +1,7 @@
 package com.twu.biblioteca;
 
+
+//Book has Author, Title, Year.
 public class Book {
     private final String author;
     private final String year;
@@ -39,7 +41,7 @@ public class Book {
         return author;
     }
 
-    public Boolean hasName(String name) {
+    public Boolean hasTitle(String name) {
         if (title.equals(name))
             return true;
         return false;

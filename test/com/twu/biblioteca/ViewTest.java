@@ -62,10 +62,12 @@ public class ViewTest {
 
         view.displayMenu();
 
-        assertEquals("[0] Quit\n" +
+        assertEquals("\n\t\tMenu\n" +
+                "[0] Quit\n" +
                 "[1] List Books\n" +
                 "[2] Checkout Book\n" +
-                "[3] CheckIn Book\n", outContent.toString());
+                "[3] CheckIn Book\n" +
+                "Enter Your Option :\n", outContent.toString());
     }
 
     @Test

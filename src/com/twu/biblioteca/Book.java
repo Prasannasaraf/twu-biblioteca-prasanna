@@ -3,9 +3,9 @@ package com.twu.biblioteca;
 
 //Book has Author, Title, Year.
 public class Book {
+    private final String title;
     private final String author;
     private final String year;
-    private String title;
 
     public Book(String name, String author, String year) {
         this.title = name;
@@ -13,8 +13,15 @@ public class Book {
         this.year = year;
     }
 
-    public String getTitle() {
-        return title;
+    public Boolean hasTitle(String name) {
+        if (title.equals(name))
+            return true;
+        return false;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("%-15s %-15s %-5s",title,author,year);
     }
 
     @Override
@@ -31,19 +38,5 @@ public class Book {
     @Override
     public int hashCode() {
         return title.hashCode();
-    }
-
-    public String getYear() {
-        return year;
-    }
-
-    public String getAuthor() {
-        return author;
-    }
-
-    public Boolean hasTitle(String name) {
-        if (title.equals(name))
-            return true;
-        return false;
     }
 }

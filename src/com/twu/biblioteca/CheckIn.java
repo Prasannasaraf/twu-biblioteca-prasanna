@@ -14,6 +14,7 @@ public class CheckIn implements Operations {
 
     @Override
     public void execute() {
+        view.displayEnterTheBookName();
         if (library.checkInBook(view.getInput())) {
             view.displaySuccessfulCheckIn();
         }

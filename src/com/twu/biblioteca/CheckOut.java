@@ -14,6 +14,7 @@ public class CheckOut implements Operations {
 
     @Override
     public void execute() {
+        view.displayEnterTheBookName();
         if (library.checkOutBook(view.getInput())) {
             view.displaySuccessfulCheckout();
         } else {

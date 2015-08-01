@@ -36,6 +36,10 @@ public class View {
                 "Enter Your Option :");
     }
 
+    public void displayEnterTheBookName() {
+        System.out.println("Enter the Book Name:");
+    }
+
     public void displaySuccessfulCheckout() {
         System.out.println("Thank you! Enjoy the book");
     }

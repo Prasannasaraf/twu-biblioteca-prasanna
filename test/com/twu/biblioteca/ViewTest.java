@@ -106,6 +106,15 @@ public class ViewTest {
         assertEquals("That is not a valid book to return.\n", outContent.toString());
     }
 
+    @Test
+    public void shouldDisplayEnterYourBookName() {
+        View view = new View();
+
+        view.displayEnterTheBookName();
+
+        assertEquals("Enter the Book Name:\n", outContent.toString());
+    }
+
     @After
     public void cleanUpStreams() {
         System.setOut(original);

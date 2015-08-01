@@ -7,9 +7,9 @@ import static org.junit.Assert.assertEquals;
 public class BookTest {
 
     @Test
-    public void shouldGiveBookName() {
+    public void shouldGiveBookDetails() {
         Book book = new Book("Red Jhon", "Martin ", "1994");
-        assertEquals("Red Jhon", book.getTitle());
+        assertEquals("Red Jhon        Martin          1994 ", book.toString());
     }
 
     @Test

@@ -11,6 +11,6 @@ public class InvalidOption implements Operations {
 
     @Override
     public void execute() {
-        view.displayInvalidOption();
+        view.show(Messages.invalidOption);
     }
 }

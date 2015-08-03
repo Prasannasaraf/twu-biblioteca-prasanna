@@ -9,8 +9,13 @@
         <fileset dir="${lib.dir}" includes="mockito-all-1.9.5.jar"/>
     </path>
 
+    <target name="clean">
+        <delete dir="build"/>
+    </target>
+
     <target name="compile">
-        <javac srcdir="src;test" destdir="out" includeantruntime="false" classpathref="classpath">
+        <mkdir dir = "build"/>
+        <javac srcdir="src;test" destdir="build" includeantruntime="false" classpathref="classpath">
         </javac>
     </target>
 
@@ -19,13 +24,15 @@
             <test name="com.twu.biblioteca.ViewTest"/>
             <test name="com.twu.biblioteca.LibraryTest"/>
             <test name="com.twu.biblioteca.BookTest"/>
+            <test name="com.twu.biblioteca.MovieTest"/>
             <test name="com.twu.biblioteca.CheckOutTest"/>
             <test name="com.twu.biblioteca.CheckInTest"/>
-            <test name="com.twu.biblioteca.DisplayBooksTest"/>
+            <test name="com.twu.biblioteca.DisplayTest"/>
             <test name="com.twu.biblioteca.InvalidOptionTest"/>
             <test name="com.twu.biblioteca.BibliotecaParserTest"/>
+            <test name="com.twu.biblioteca.MessagesTest"/>
             <classpath>
-                <pathelement location="out"/>
+                <pathelement location="build"/>
                 <path refid="classpath"/>
             </classpath>
         </junit>
@@ -33,7 +40,7 @@
 
     <target name="createjar" depends="runjunit">
         <jar destfile="lib/app.jar"
-             basedir="out"
+             basedir="build"
              excludes="**/Test.class"
                 />
     </target>

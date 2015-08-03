@@ -14,6 +14,6 @@ public class InvalidOptionTest {
         InvalidOption invalidOption = new InvalidOption(view);
 
         invalidOption.execute();
-        verify(view).displayInvalidOption();
+        verify(view).show(Messages.invalidOption);
     }
 }

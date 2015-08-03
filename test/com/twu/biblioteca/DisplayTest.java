@@ -6,14 +6,14 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 
 
-public class DisplayBooksTest {
+public class DisplayTest {
     @Test
     public void shouldCallDisplayBooks() {
         View view = mock(View.class);
         Library library = mock(Library.class);
-        DisplayBooks displayBooks = new DisplayBooks(view, library);
+        Display display = new Display(view, library);
 
-        displayBooks.execute();
+        display.execute();
 
         verify(view).displayListOfBooks(library);
     }

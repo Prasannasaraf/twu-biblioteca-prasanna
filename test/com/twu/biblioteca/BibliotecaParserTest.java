@@ -46,6 +46,11 @@ public class BibliotecaParserTest {
     }
 
     @Test
+    public void shouldGiveCheckoutObjectOn5AsInput() {
+        assertEquals(CheckOut.class, bibliotecaParser.parse("5", view, library, moviesLibrary).getClass());
+    }
+
+    @Test
     public void shouldGiveCheckInObject() {
         assertEquals(CheckIn.class, bibliotecaParser.parse("3", view, library, moviesLibrary).getClass());
     }

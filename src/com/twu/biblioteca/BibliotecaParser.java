@@ -15,6 +15,8 @@ public class BibliotecaParser {
                 return new CheckIn(view, bookLibrary);
             case "4":
                 return new Display(view, moviesLibrary);
+            case "5":
+                return new CheckOut(view, moviesLibrary);
             default:
                 return new InvalidOption(view);
         }

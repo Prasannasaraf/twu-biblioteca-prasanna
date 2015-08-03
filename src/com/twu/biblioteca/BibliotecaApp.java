@@ -9,12 +9,19 @@ public class BibliotecaApp {
         View view = new View();
         Book book1 = new Book("Red Jhon", "Martin", "2004");
         Book book2 = new Book("Success", "Ricky", "1994");
-        ArrayList<Book> books = new ArrayList<>();
-        ArrayList<Book> checkOutBooks = new ArrayList<>();
+        Movie movie1 = new Movie("Harry Potter", "2010", "David Yates", "9");
+        Movie movie2 = new Movie("InterStellar", "2014", "Christopher Nolan", "10");
+        ArrayList<Item> books = new ArrayList<>();
+        ArrayList<Item> checkOutBooks = new ArrayList<>();
+        ArrayList<Item> movies = new ArrayList<>();
+        ArrayList<Item> checkedOutMovies = new ArrayList<>();
         books.add(book1);
         books.add(book2);
-        Library library = new Library(books, checkOutBooks);
-        BibliotecaController bibliotecaController = new BibliotecaController(view, library);
+        movies.add(movie1);
+        movies.add(movie2);
+        Library booksLibrary = new Library(books, checkOutBooks);
+        Library moviesLibrary = new Library(movies, checkedOutMovies);
+        BibliotecaController bibliotecaController = new BibliotecaController(view, booksLibrary, moviesLibrary);
         bibliotecaController.start();
     }
 }

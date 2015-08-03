@@ -15,6 +15,6 @@ public class DisplayTest {
 
         display.execute();
 
-        verify(view).displayListOfBooks(library);
+        verify(view).displayListOfItems(library);
     }
 }

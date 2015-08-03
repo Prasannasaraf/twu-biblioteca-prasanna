@@ -17,7 +17,7 @@ public class CheckInTest {
         when(mockedView.getInput()).thenReturn("Success");
         checkIn.execute();
 
-        verify(mockedLibrary).checkInBook("Success");
+        verify(mockedLibrary).checkInItem("Success");
     }
 
     @Test
@@ -27,11 +27,11 @@ public class CheckInTest {
 
         CheckIn checkIn = new CheckIn(mockedView, mockedLibrary);
 
-        when(mockedLibrary.checkInBook("Success")).thenReturn(true);
+        when(mockedLibrary.checkInItem("Success")).thenReturn(true);
         when(mockedView.getInput()).thenReturn("Success");
         checkIn.execute();
 
-        verify(mockedView).displaySuccessfulCheckIn();
+        verify(mockedView).show(Messages.successfulBookCheckIn);
     }
 
     @Test
@@ -41,10 +41,10 @@ public class CheckInTest {
 
         CheckIn checkIn = new CheckIn(mockedView, mockedLibrary);
 
-        when(mockedLibrary.checkInBook("Success")).thenReturn(false);
+        when(mockedLibrary.checkInItem("Success")).thenReturn(false);
         when(mockedView.getInput()).thenReturn("Success");
         checkIn.execute();
 
-        verify(mockedView).displayUnSuccessfulCheckIn();
+        verify(mockedView).show(Messages.unsuccessfulBookCheckIn);
     }
 }

@@ -17,7 +17,7 @@ public class CheckOutTest {
         when(mockedView.getInput()).thenReturn("Success");
         checkOut.execute();
 
-        verify(mockedLibrary).checkOutBook("Success");
+        verify(mockedLibrary).checkOutItem("Success");
     }
 
     @Test
@@ -27,11 +27,11 @@ public class CheckOutTest {
 
         CheckOut checkOut = new CheckOut(mockedView, mockedLibrary);
 
-        when(mockedLibrary.checkOutBook("Success")).thenReturn(true);
+        when(mockedLibrary.checkOutItem("Success")).thenReturn(true);
         when(mockedView.getInput()).thenReturn("Success");
         checkOut.execute();
 
-        verify(mockedView).displaySuccessfulCheckout();
+        verify(mockedView).show(Messages.successfulBookCheckout);
     }
 
     @Test
@@ -41,10 +41,10 @@ public class CheckOutTest {
 
         CheckOut checkOut = new CheckOut(mockedView, mockedLibrary);
 
-        when(mockedLibrary.checkOutBook("SuccessFactor")).thenReturn(false);
+        when(mockedLibrary.checkOutItem("SuccessFactor")).thenReturn(false);
         when(mockedView.getInput()).thenReturn("SuccessFactor");
         checkOut.execute();
 
-        verify(mockedView).displayUnSuccessfulCheckout();
+        verify(mockedView).show(Messages.unsuccessfulBookCheckOut);
     }
 }

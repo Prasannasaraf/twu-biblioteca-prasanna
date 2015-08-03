@@ -2,7 +2,7 @@ package com.twu.biblioteca;
 
 
 //Book has Author, Title, Year.
-public class Book {
+public class Book implements Item {
     private final String title;
     private final String author;
     private final String year;
@@ -13,10 +13,8 @@ public class Book {
         this.year = year;
     }
 
-    public Boolean hasTitle(String name) {
-        if (title.equals(name))
-            return true;
-        return false;
+    public boolean hasTitle(String name) {
+        return title.equals(name);
     }
 
     @Override

@@ -14,6 +14,6 @@ public class Display implements Operations {
 
     @Override
     public void execute() {
-        view.displayListOfBooks(library);
+        view.displayListOfItems(library);
     }
 }

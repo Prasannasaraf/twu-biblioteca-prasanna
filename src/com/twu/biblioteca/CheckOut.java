@@ -14,11 +14,11 @@ public class CheckOut implements Operations {
 
     @Override
     public void execute() {
-        view.displayEnterTheBookName();
-        if (library.checkOutBook(view.getInput())) {
-            view.displaySuccessfulCheckout();
+        view.show(Messages.enterBookName);
+        if (library.checkOutItem(view.getInput())) {
+            view.show(Messages.successfulBookCheckout);
         } else {
-            view.displayUnSuccessfulCheckout();
+            view.show(Messages.unsuccessfulBookCheckOut);
         }
     }
 }

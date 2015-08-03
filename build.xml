@@ -21,16 +21,16 @@
 
     <target name="runjunit" depends="compile">
         <junit haltonfailure="true" printsummary="true" showoutput="yes">
-            <test name="com.twu.biblioteca.ViewTest"/>
-            <test name="com.twu.biblioteca.LibraryTest"/>
+            <test name="com.twu.biblioteca.BibliotecaParserTest"/>
             <test name="com.twu.biblioteca.BookTest"/>
-            <test name="com.twu.biblioteca.MovieTest"/>
-            <test name="com.twu.biblioteca.CheckOutTest"/>
             <test name="com.twu.biblioteca.CheckInTest"/>
+            <test name="com.twu.biblioteca.CheckOutTest"/>
             <test name="com.twu.biblioteca.DisplayTest"/>
             <test name="com.twu.biblioteca.InvalidOptionTest"/>
-            <test name="com.twu.biblioteca.BibliotecaParserTest"/>
+            <test name="com.twu.biblioteca.LibraryTest"/>
             <test name="com.twu.biblioteca.MessagesTest"/>
+            <test name="com.twu.biblioteca.MovieTest"/>
+            <test name="com.twu.biblioteca.ViewTest"/>
             <classpath>
                 <pathelement location="build"/>
                 <path refid="classpath"/>

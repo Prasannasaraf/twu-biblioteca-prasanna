@@ -23,13 +23,14 @@
         <junit haltonfailure="true" printsummary="true" showoutput="yes">
             <test name="com.twu.biblioteca.controller.BibliotecaParserTest"/>
             <test name="com.twu.biblioteca.model.BookTest"/>
+            <test name="com.twu.biblioteca.model.MovieTest"/>
+            <test name="com.twu.biblioteca.model.LibraryTest"/>
+            <test name="com.twu.biblioteca.model.UserTest"/>
             <test name="com.twu.biblioteca.operations.CheckInTest"/>
             <test name="com.twu.biblioteca.operations.CheckOutTest"/>
             <test name="com.twu.biblioteca.operations.DisplayTest"/>
             <test name="com.twu.biblioteca.operations.InvalidOptionTest"/>
-            <test name="com.twu.biblioteca.model.LibraryTest"/>
             <test name="com.twu.biblioteca.presentation.MessagesTest"/>
-            <test name="com.twu.biblioteca.model.MovieTest"/>
             <test name="com.twu.biblioteca.presentation.ViewTest"/>
             <classpath>
                 <pathelement location="build"/>

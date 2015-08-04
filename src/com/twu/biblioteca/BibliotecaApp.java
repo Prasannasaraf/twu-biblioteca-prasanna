@@ -1,5 +1,12 @@
 package com.twu.biblioteca;
 
+import com.twu.biblioteca.controller.BibliotecaController;
+import com.twu.biblioteca.model.Book;
+import com.twu.biblioteca.model.Item;
+import com.twu.biblioteca.model.Library;
+import com.twu.biblioteca.model.Movie;
+import com.twu.biblioteca.presentation.View;
+
 import java.util.ArrayList;
 
 

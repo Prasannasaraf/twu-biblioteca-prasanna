@@ -1,5 +1,9 @@
-package com.twu.biblioteca;
+package com.twu.biblioteca.operations;
 
+
+import com.twu.biblioteca.presentation.Messages;
+import com.twu.biblioteca.presentation.View;
+import com.twu.biblioteca.model.Library;
 
 //Checks In book to Library
 public class CheckIn implements Operations {

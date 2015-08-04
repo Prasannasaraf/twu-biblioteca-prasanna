@@ -1,5 +1,8 @@
-package com.twu.biblioteca;
+package com.twu.biblioteca.controller;
 
+import com.twu.biblioteca.model.Library;
+import com.twu.biblioteca.operations.*;
+import com.twu.biblioteca.presentation.View;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mockito;

@@ -1,5 +1,8 @@
-package com.twu.biblioteca;
+package com.twu.biblioteca.operations;
 
+import com.twu.biblioteca.operations.InvalidOption;
+import com.twu.biblioteca.presentation.Messages;
+import com.twu.biblioteca.presentation.View;
 import org.junit.Test;
 
 import static org.mockito.Mockito.mock;

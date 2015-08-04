@@ -1,5 +1,10 @@
-package com.twu.biblioteca;
+package com.twu.biblioteca.controller;
 
+
+import com.twu.biblioteca.model.Library;
+import com.twu.biblioteca.operations.*;
+import com.twu.biblioteca.presentation.Messages;
+import com.twu.biblioteca.presentation.View;
 
 //Returns Domain Objects
 public class BibliotecaParser {

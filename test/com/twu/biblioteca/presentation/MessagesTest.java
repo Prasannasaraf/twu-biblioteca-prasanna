@@ -1,8 +1,9 @@
-package com.twu.biblioteca;
+package com.twu.biblioteca.presentation;
 
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
+
 
 public class MessagesTest {
 

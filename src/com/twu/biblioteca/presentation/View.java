@@ -1,4 +1,6 @@
-package com.twu.biblioteca;
+package com.twu.biblioteca.presentation;
+
+import com.twu.biblioteca.model.Item;
 
 import java.util.ArrayList;
 import java.util.Scanner;

@@ -1,4 +1,4 @@
-package com.twu.biblioteca;
+package com.twu.biblioteca.presentation;
 
 public enum Messages {
     welcome("Welcome to Biblioteca"),

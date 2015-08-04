@@ -11,10 +11,10 @@ public class DisplayTest {
     public void shouldCallDisplayBooks() {
         View view = mock(View.class);
         Library library = mock(Library.class);
-        Display display = new Display(view, library);
+        Display display = new Display(view, library.getItems(), Messages.listOfBooks, Messages.booksHeader);
 
         display.execute();
 
-        verify(view).displayListOfItems(library);
+        verify(view).displayListOfItems(library.getItems(), Messages.listOfBooks, Messages.booksHeader);
     }
 }

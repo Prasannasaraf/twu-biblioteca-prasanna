@@ -5,21 +5,27 @@ package com.twu.biblioteca;
 public class CheckIn implements Operations {
     private final View view;
     private final Library library;
+    private final Messages enterItemName;
+    private final Messages successfulItemCheckIn;
+    private final Messages unsuccessfulItemCheckIn;
 
-    public CheckIn(View view, Library library) {
+    public CheckIn(View view, Library library, Messages enterItemName, Messages successfulItemCheckIn, Messages unsuccessfulItemCheckIn) {
 
         this.view = view;
         this.library = library;
+        this.enterItemName = enterItemName;
+        this.successfulItemCheckIn = successfulItemCheckIn;
+        this.unsuccessfulItemCheckIn = unsuccessfulItemCheckIn;
     }
 
     @Override
     public void execute() {
-        view.show(Messages.enterBookName);
+        view.show(enterItemName);
         if (library.checkInItem(view.getInput())) {
-            view.show(Messages.successfulBookCheckIn);
+            view.show(successfulItemCheckIn);
         }
         else {
-            view.show(Messages.unsuccessfulBookCheckIn);
+            view.show(unsuccessfulItemCheckIn);
         }
     }
 }

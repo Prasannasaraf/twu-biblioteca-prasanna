@@ -12,7 +12,7 @@ public class CheckInTest {
         Library mockedLibrary = mock(Library.class);
         View mockedView = mock(View.class);
 
-        CheckIn checkIn = new CheckIn(mockedView, mockedLibrary);
+        CheckIn checkIn = new CheckIn(mockedView, mockedLibrary, Messages.enterBookName, Messages.successfulBookCheckIn, Messages.unsuccessfulBookCheckIn);
 
         when(mockedView.getInput()).thenReturn("Success");
         checkIn.execute();
@@ -25,7 +25,7 @@ public class CheckInTest {
         Library mockedLibrary = mock(Library.class);
         View mockedView = mock(View.class);
 
-        CheckIn checkIn = new CheckIn(mockedView, mockedLibrary);
+        CheckIn checkIn = new CheckIn(mockedView, mockedLibrary, Messages.enterBookName, Messages.successfulBookCheckIn, Messages.unsuccessfulBookCheckIn);
 
         when(mockedLibrary.checkInItem("Success")).thenReturn(true);
         when(mockedView.getInput()).thenReturn("Success");
@@ -39,7 +39,7 @@ public class CheckInTest {
         Library mockedLibrary = mock(Library.class);
         View mockedView = mock(View.class);
 
-        CheckIn checkIn = new CheckIn(mockedView, mockedLibrary);
+        CheckIn checkIn = new CheckIn(mockedView, mockedLibrary, Messages.enterBookName, Messages.successfulBookCheckIn, Messages.unsuccessfulBookCheckIn);
 
         when(mockedLibrary.checkInItem("Success")).thenReturn(false);
         when(mockedView.getInput()).thenReturn("Success");

@@ -27,7 +27,7 @@ public class BibliotecaParserTest {
     }
     @Test
     public void shouldReturnDisplayMoviesObject() {
-        assertEquals(Display.class, bibliotecaParser.parse("4", view, library, moviesLibrary).getClass());
+        assertEquals(Display.class, bibliotecaParser.parse("5", view, library, moviesLibrary).getClass());
     }
 
     @Test
@@ -42,21 +42,21 @@ public class BibliotecaParserTest {
 
     @Test
     public void shouldGiveCheckoutObject() {
-        assertEquals(CheckOut.class, bibliotecaParser.parse("2", view, library, moviesLibrary).getClass());
+        assertEquals(CheckOut.class, bibliotecaParser.parse("3", view, library, moviesLibrary).getClass());
     }
 
     @Test
-    public void shouldGiveCheckoutObjectOn5AsInput() {
-        assertEquals(CheckOut.class, bibliotecaParser.parse("5", view, library, moviesLibrary).getClass());
+    public void shouldGiveCheckoutObjectOn7AsInput() {
+        assertEquals(CheckOut.class, bibliotecaParser.parse("7", view, library, moviesLibrary).getClass());
     }
 
     @Test
     public void shouldGiveCheckInObject() {
-        assertEquals(CheckIn.class, bibliotecaParser.parse("3", view, library, moviesLibrary).getClass());
+        assertEquals(CheckIn.class, bibliotecaParser.parse("4", view, library, moviesLibrary).getClass());
     }
 
     @Test
-    public void shouldGiveCheckInObjectOn6AsInput() {
-        assertEquals(CheckIn.class, bibliotecaParser.parse("6", view, library, moviesLibrary).getClass());
+    public void shouldGiveCheckInObjectOn8AsInput() {
+        assertEquals(CheckIn.class, bibliotecaParser.parse("8", view, library, moviesLibrary).getClass());
     }
 }

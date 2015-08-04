@@ -42,7 +42,7 @@ public class ViewTest {
         books.add(book2);
         Library bookLibrary = new Library(books, checkOutBooks);
 
-        view.displayListOfItems(bookLibrary);
+        view.displayListOfItems(bookLibrary.getItems(), Messages.listOfBooks, Messages.booksHeader);
         assertEquals("List of Books\nName            Author          Year \nRed Jhon        Martin          2004 \nSuccess         Ricky           1994 \n", outContent.toString());
     }
 
@@ -64,11 +64,13 @@ public class ViewTest {
         assertEquals("\n\t\tMenu\n" +
                 "[0] Quit\n" +
                 "[1] List Books\n" +
-                "[2] Checkout Book\n" +
-                "[3] CheckIn Book\n" +
-                "[4] List Movies\n" +
-                "[5] CheckOut Movie\n" +
-                "[6] CheckIn Movie\n" +
+                "[2] List Books\n" +
+                "[3] Checkout Book\n" +
+                "[4] CheckIn Book\n" +
+                "[5] List Movies\n" +
+                "[6] List Movies\n" +
+                "[7] CheckOut Movie\n" +
+                "[8] CheckIn Movie\n" +
                 "Enter Your Option :\n", outContent.toString());
     }
 

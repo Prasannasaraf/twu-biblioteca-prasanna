@@ -12,7 +12,7 @@ public class CheckOutTest {
         Library mockedLibrary = mock(Library.class);
         View mockedView = mock(View.class);
 
-        CheckOut checkOut = new CheckOut(mockedView, mockedLibrary);
+        CheckOut checkOut = new CheckOut(mockedView, mockedLibrary, Messages.enterBookName, Messages.successfulBookCheckout, Messages.unsuccessfulBookCheckOut);
 
         when(mockedView.getInput()).thenReturn("Success");
         checkOut.execute();
@@ -25,7 +25,7 @@ public class CheckOutTest {
         Library mockedLibrary = mock(Library.class);
         View mockedView = mock(View.class);
 
-        CheckOut checkOut = new CheckOut(mockedView, mockedLibrary);
+        CheckOut checkOut = new CheckOut(mockedView, mockedLibrary, Messages.enterBookName, Messages.successfulBookCheckout, Messages.unsuccessfulBookCheckOut);
 
         when(mockedLibrary.checkOutItem("Success")).thenReturn(true);
         when(mockedView.getInput()).thenReturn("Success");
@@ -39,7 +39,7 @@ public class CheckOutTest {
         Library mockedLibrary = mock(Library.class);
         View mockedView = mock(View.class);
 
-        CheckOut checkOut = new CheckOut(mockedView, mockedLibrary);
+        CheckOut checkOut = new CheckOut(mockedView, mockedLibrary, Messages.enterBookName, Messages.successfulBookCheckout, Messages.unsuccessfulBookCheckOut);
 
         when(mockedLibrary.checkOutItem("SuccessFactor")).thenReturn(false);
         when(mockedView.getInput()).thenReturn("SuccessFactor");

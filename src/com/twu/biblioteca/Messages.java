@@ -13,17 +13,25 @@ public enum Messages {
     successfulMovieCheckIn("Thank you for returning the Movie."),
     unsuccessfulBookCheckIn("That is not a valid book to return."),
     unsuccessfulMovieCheckIn("That is not a valid Movie to return."),
+    booksHeader(String.format("%-15s %-15s %-5s\n", "Name", "Author", "Year")),
+    moviesHeader(String.format("%-15s %-20s %-5s %-2s\n", "Name", "Director", "year", "ratings")),
+    listOfBooks("List of Books"),
+    listOfMovies("List of Movies"),
+    listOfCheckedOutBooks("List of CheckedOutBooks"),
+    listOfCheckedOutMovies("List of CheckedOutMovies"),
     menu("\n\t\tMenu\n" +
             "[0] Quit\n" +
             "[1] List Books\n" +
-            "[2] Checkout Book\n" +
-            "[3] CheckIn Book\n" +
-            "[4] List Movies\n" +
-            "[5] CheckOut Movie\n" +
-            "[6] CheckIn Movie\n" +
+            "[2] List Books\n" +
+            "[3] Checkout Book\n" +
+            "[4] CheckIn Book\n" +
+            "[5] List Movies\n" +
+            "[6] List Movies\n" +
+            "[7] CheckOut Movie\n" +
+            "[8] CheckIn Movie\n" +
             "Enter Your Option :");
 
-    private  String message;
+    private String message;
 
     Messages(String message) {
         this.message = message;

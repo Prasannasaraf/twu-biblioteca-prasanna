@@ -1,12 +1,9 @@
 package com.twu.biblioteca.model;
 
-import com.twu.biblioteca.model.Book;
-import com.twu.biblioteca.model.Item;
-import com.twu.biblioteca.model.Library;
-import com.twu.biblioteca.model.Movie;
 import org.junit.Before;
 import org.junit.Test;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import static org.junit.Assert.assertEquals;
 
@@ -14,7 +11,6 @@ import static org.junit.Assert.assertEquals;
 public class LibraryTest {
     ArrayList<Item> books;
     ArrayList<Item> books1;
-    ArrayList<Item> checkedOutBooks;
     Book book1;
     Book book2;
     Book book3;
@@ -23,12 +19,14 @@ public class LibraryTest {
 
     ArrayList<Item> movies;
     ArrayList<Item> movies1;
-    ArrayList<Item> checkedOutMovies;
     Movie movie1;
     Movie movie2;
     Movie movie3;
     Movie movie4;
     Library movieLibrary;
+    private HashMap<Item, String> checkedOutBooks;
+    private HashMap<Item, String> checkedOutMovies;
+    private String user;
 
     @Before
     public void setUp() throws Exception {
@@ -36,18 +34,21 @@ public class LibraryTest {
         book2 = new Book("Success", "Ricky", "1994");
         book3 = new Book("Red Jhon", "Martin", "2004");
         book4 = new Book("Success", "Ricky", "1994");
+
         books = new ArrayList<>();
         books1 = new ArrayList<>();
-        checkedOutBooks = new ArrayList<>();
 
         movie1 = new Movie("Harry Potter", "2010", "David Yates", "9");
         movie2 = new Movie("InterStellar", "2014", "Christopher Nolan", "10");
         movie3 = new Movie("Harry Potter", "2010", "David Yates", "9");
         movie4 = new Movie("InterStellar", "2014", "Christopher Nolan", "10");
+
+        checkedOutBooks = new HashMap<>();
+        checkedOutMovies = new HashMap<>();
+
+        user = "Ram";
         movies = new ArrayList<>();
         movies1 = new ArrayList<>();
-        checkedOutMovies = new ArrayList<>();
-
         books.add(book1);
         books.add(book2);
         books1.add(book3);
@@ -68,8 +69,13 @@ public class LibraryTest {
     }
 
     @Test
+    public void shouldGiveListOfMovies() {
+        assertEquals(movies, movieLibrary.getItems());
+    }
+
+    @Test
     public void shouldCheckOutBookFromLibrary() {
-        bookLibrary.checkOutItem("Success");
+        bookLibrary.checkOutItem(user, "Success");
         books1.remove(book4);
 
         assertEquals(books1, bookLibrary.getItems());
@@ -77,23 +83,23 @@ public class LibraryTest {
 
     @Test
     public void shouldGiveTrueOnSuccessfulCheckout() {
-        assertEquals(true, bookLibrary.checkOutItem("Success"));
+        assertEquals(true, bookLibrary.checkOutItem(user, "Success"));
     }
 
     @Test
     public void shouldGiveFalseOnUnSuccessfulCheckout() {
-        assertEquals(false, bookLibrary.checkOutItem("sjsjsj"));
+        assertEquals(false, bookLibrary.checkOutItem(user, "Successff"));
     }
 
     @Test
     public void shouldCheckInBookToLibrary() {
-        bookLibrary.checkOutItem("Success");
+        bookLibrary.checkOutItem(user, "Success");
 
-        assertEquals(true, bookLibrary.checkInItem("Success"));
+        assertEquals(true, bookLibrary.checkInItem(user, "Success"));
     }
 
     @Test
     public void shouldNotCheckInBookToLibrary() {
-        assertEquals(false, bookLibrary.checkInItem("Success"));
+        assertEquals(false, bookLibrary.checkInItem(user, "Success"));
     }
 }

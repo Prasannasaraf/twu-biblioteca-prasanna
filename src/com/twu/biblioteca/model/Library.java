@@ -1,14 +1,15 @@
 package com.twu.biblioteca.model;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 
 //Library can have  Books or Movies.
 public class Library {
     private  ArrayList<Item> items;
-    private  ArrayList<Item> checkedOutItems;
+    private HashMap<Item, String> checkedOutItems;
 
-    public Library(ArrayList<Item> items, ArrayList<Item> checkedOutItems) {
+    public Library(ArrayList<Item> items, HashMap<Item, String> checkedOutItems) {
         this.items = items;
         this.checkedOutItems = checkedOutItems;
     }
@@ -17,29 +18,29 @@ public class Library {
         return items;
     }
 
-    public boolean checkOutItem(String itemName) {
+    public HashMap<Item, String> getCheckedOutItems() {
+        return checkedOutItems;
+    }
+
+    public boolean checkOutItem(String user, String itemName) {
         for (Item item : items) {
             if (item.hasTitle(itemName)) {
                 items.remove(item);
-                checkedOutItems.add(item);
+                checkedOutItems.put(item, user);
                 return true;
             }
         }
         return false;
     }
 
-    public boolean checkInItem(String itemName) {
-        for (Item item : checkedOutItems) {
-            if (item.hasTitle(itemName)) {
+    public boolean checkInItem(String user, String itemName) {
+        for (Item item : checkedOutItems.keySet()) {
+            if (item.hasTitle(itemName) && user.equals(checkedOutItems.get(item))) {
                 checkedOutItems.remove(item);
                 items.add(item);
                 return true;
             }
         }
         return false;
-    }
-
-    public ArrayList<Item> getCheckedOutItems() {
-        return checkedOutItems;
     }
 }

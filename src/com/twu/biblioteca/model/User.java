@@ -19,7 +19,7 @@ public class User {
 
     @Override
     public String toString() {
-        return name + " "  + emailAddress + " " + phoneNumber;
+        return String.format("%-10s %-20s %-15s", name, emailAddress, phoneNumber);
     }
 
     public boolean match(String s, String ramRam) {

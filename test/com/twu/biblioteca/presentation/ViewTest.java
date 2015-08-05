@@ -45,6 +45,7 @@ public class ViewTest {
         Library bookLibrary = new Library(books, checkedBooks);
 
         view.displayListOfItems(bookLibrary.getItems(), Messages.listOfBooks, Messages.booksHeader);
+
         assertEquals("List of Books\n" +
                 "Name            Author          Year \n" +
                 "Red Jhon        Martin          2004 \n" +
@@ -68,14 +69,16 @@ public class ViewTest {
 
         assertEquals("\n\t\tMenu\n" +
                 "[0] Quit\n" +
-                "[1] List Books\n" +
-                "[2] List Books\n" +
-                "[3] Checkout Book\n" +
-                "[4] CheckIn Book\n" +
-                "[5] List Movies\n" +
-                "[6] List Movies\n" +
-                "[7] CheckOut Movie\n" +
-                "[8] CheckIn Movie\n" +
+                "[1] List Of Available Books\n" +
+                "[2] Checkout Book\n" +
+                "[3] CheckIn Book\n" +
+                "[4] List Of Available Movies\n" +
+                "[5] CheckOut Movie\n" +
+                "[6] CheckIn Movie\n" +
+                "[7] My Profile\n" +
+                "[8] List Of CheckedOut Books\n" +
+                "[9] List Of CheckedOut Movies\n" +
+                "[10] List Of Users\n" +
                 "Enter Your Option :\n", outContent.toString());
     }
 
@@ -134,7 +137,6 @@ public class ViewTest {
 
         checkedOutItems.put(movie1, "Ram");
         checkedOutItems.put(movie2, "Laxman");
-
         view.displayCheckedOutList(checkedOutItems, Messages.listOfCheckedOutMovies, Messages.checkedOutMoviesHeader);
 
         assertEquals("List of CheckedOutMovies\n" +

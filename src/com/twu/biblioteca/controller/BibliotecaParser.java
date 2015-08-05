@@ -8,6 +8,8 @@ import com.twu.biblioteca.operations.*;
 import com.twu.biblioteca.presentation.Messages;
 import com.twu.biblioteca.presentation.View;
 
+import java.util.ArrayList;
+
 //Returns Domain Objects
 public class BibliotecaParser {
     public Operations parse(String userInput, View view, Library bookLibrary, Library moviesLibrary, User user, Login login) {
@@ -45,4 +47,27 @@ public class BibliotecaParser {
                 return new InvalidOption(view);
         }
     }
+
+    public Operations parse(View view, Library bookLibrary, Library moviesLibrary, User user, Login login) {
+        if (user == null) {
+            return new IncorrectLogin(view);
+        }
+        if (user.isLibrarian()) {
+            return new UserController(view, bookLibrary, moviesLibrary, user, this, login, Messages.librarianMenu);
+        } else {
+            return new UserController(view, bookLibrary, moviesLibrary, user, this, login, Messages.userMenu);
+        }
+    }
+
+    public Operations parse(String input, View view, Library bookLibrary, Library moviesLibrary, BibliotecaParser parser, ArrayList<User> users) {
+        switch (input) {
+            case "0":
+                return new Quit();
+            case "1":
+                return new Login(users, view, parser, bookLibrary, moviesLibrary);
+            default:
+                return new InvalidOption(view);
+        }
+    }
+
 }

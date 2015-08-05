@@ -12,6 +12,7 @@ import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
+
 public class BibliotecaParserTest {
 
     Library moviesLibrary;
@@ -76,6 +77,13 @@ public class BibliotecaParserTest {
         when(user.isLibrarian()).thenReturn(true);
 
         assertEquals(DisplayCheckedOutList.class, bibliotecaParser.parse("8", view, library, moviesLibrary, user, login).getClass());
+    }
+
+    @Test
+    public void shouldGiveInvalidOptionObjectOn9AsInputWhenUserIsNotLibrarian() {
+        when(user.isLibrarian()).thenReturn(false);
+
+        assertEquals(InvalidOption.class, bibliotecaParser.parse("9", view, library, moviesLibrary, user, login).getClass());
     }
 
     @Test

@@ -29,7 +29,12 @@ public class BibliotecaParser {
             case "7":
                 return new DisplayUserInformation(view, user);
             case "8":
-                return new DisplayCheckedOutList(view, bookLibrary.getCheckedOutItems(), Messages.listOfCheckedOutBooks, Messages.checkedOutBooksHeader);
+                if (user.isLibrarian())
+                    return new DisplayCheckedOutList(view, bookLibrary.getCheckedOutItems(), Messages.listOfCheckedOutBooks, Messages.checkedOutBooksHeader);
+                 return new NullObject();
+            case "9":
+                if (user.isLibrarian())
+                    return new DisplayCheckedOutList(view, moviesLibrary.getCheckedOutItems(), Messages.listOfCheckedOutMovies, Messages.checkedOutMoviesHeader);
             default:
                 return new InvalidOption(view);
         }

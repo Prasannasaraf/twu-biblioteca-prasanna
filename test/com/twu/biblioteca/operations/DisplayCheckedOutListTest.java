@@ -14,10 +14,10 @@ public class DisplayCheckedOutListTest {
     public void shouldCallDisplayCheckedOutItems() {
         View view = mock(View.class);
         Library library = mock(Library.class);
-        DisplayCheckedOutList displayCheckedOutList = new DisplayCheckedOutList(view, library.getCheckedOut(), Messages.listOfCheckedOutMovies, Messages.moviesHeader);
+        DisplayCheckedOutList displayCheckedOutList = new DisplayCheckedOutList(view, library.getCheckedOutItems(), Messages.listOfCheckedOutMovies, Messages.checkedOutMoviesHeader);
 
         displayCheckedOutList.execute();
 
-        verify(view).displayCheckedOutList(library.getCheckedOut(), Messages.listOfCheckedOutMovies, Messages.moviesHeader);
+        verify(view).displayCheckedOutList(library.getCheckedOutItems(), Messages.listOfCheckedOutMovies, Messages.checkedOutMoviesHeader);
     }
 }

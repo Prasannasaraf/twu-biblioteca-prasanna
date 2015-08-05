@@ -94,6 +94,13 @@ public class BibliotecaParserTest {
     }
 
     @Test
+    public void shouldGiveNullObjectOnLogOut() {
+        when(user.isLibrarian()).thenReturn(false);
+
+        assertEquals(NullObject.class, bibliotecaParser.parse("8", view, library, moviesLibrary, user, login).getClass());
+    }
+
+    @Test
     public void shouldGiveInvalidOptionObject() {
         assertEquals(InvalidOption.class, bibliotecaParser.parse("90", view, library, moviesLibrary, user, login).getClass());
     }

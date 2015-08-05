@@ -38,6 +38,9 @@ public class BibliotecaParser {
             case "10":
                 if (user.isLibrarian())
                     return new DisplayListOfUsers(view, login.getUsers(), Messages.listOfUsers, Messages.userHeader );
+            case "11":
+                if (user.isLibrarian())
+                    return new NullObject();
             default:
                 return new InvalidOption(view);
         }

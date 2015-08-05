@@ -4,6 +4,7 @@ import com.twu.biblioteca.model.Item;
 import com.twu.biblioteca.model.User;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Scanner;
 
 
@@ -29,5 +30,13 @@ public class View {
 
     public void showUserInformation(User user) {
         System.out.println(user);
+    }
+
+    public void displayCheckedOutList(HashMap<Item, String> checkedOutItems, Messages listOfItems, Messages itemHeader) {
+        System.out.println(listOfItems.getMessage());
+        System.out.print(itemHeader.getMessage());
+        for (Item item : checkedOutItems.keySet()) {
+            System.out.println(item + " " + checkedOutItems.get(item));
+        }
     }
 }

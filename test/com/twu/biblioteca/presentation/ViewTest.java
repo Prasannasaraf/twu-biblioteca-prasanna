@@ -1,9 +1,6 @@
 package com.twu.biblioteca.presentation;
 
-import com.twu.biblioteca.model.Book;
-import com.twu.biblioteca.model.Item;
-import com.twu.biblioteca.model.Library;
-import com.twu.biblioteca.model.User;
+import com.twu.biblioteca.model.*;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -42,14 +39,16 @@ public class ViewTest {
         Book book1 = new Book("Red Jhon", "Martin", "2004");
         Book book2 = new Book("Success", "Ricky", "1994");
         ArrayList<Item> books = new ArrayList<>();
-        ArrayList<Item> checkOutBooks = new ArrayList<>();
         books.add(book1);
         books.add(book2);
-        HashMap<Item,User> checkedBooks = new HashMap<>();
-        Library bookLibrary = new Library(books, checkOutBooks, checkedBooks);
+        HashMap<Item, String> checkedBooks = new HashMap<>();
+        Library bookLibrary = new Library(books, checkedBooks);
 
         view.displayListOfItems(bookLibrary.getItems(), Messages.listOfBooks, Messages.booksHeader);
-        assertEquals("List of Books\nName            Author          Year \nRed Jhon        Martin          2004 \nSuccess         Ricky           1994 \n", outContent.toString());
+        assertEquals("List of Books\n" +
+                "Name            Author          Year \n" +
+                "Red Jhon        Martin          2004 \n" +
+                "Success         Ricky           1994 \n", outContent.toString());
     }
 
     @Test
@@ -123,10 +122,26 @@ public class ViewTest {
 
         view.showUserInformation(user);
 
-        assertEquals("Ram ramprasad@twu.com 619\n",outContent.toString());
+        assertEquals("Ram ramprasad@twu.com 619\n", outContent.toString());
     }
 
     @Test
+    public void shouldDisplayCheckedOutList() {
+        View view = new View();
+        HashMap<Item, String> checkedOutItems = new HashMap<>();
+        Movie movie1 = new Movie("Harry Potter", "2010", "David Yates", "9");
+        Movie movie2 = new Movie("InterStellar", "2014", "Christopher Nolan", "10");
+
+        checkedOutItems.put(movie1, "Ram");
+        checkedOutItems.put(movie2, "Laxman");
+
+        view.displayCheckedOutList(checkedOutItems, Messages.listOfCheckedOutMovies, Messages.checkedOutMoviesHeader);
+
+        assertEquals("List of CheckedOutMovies\n" +
+                "Name            Director             year  ratings    Borrower       \n" +
+                "InterStellar    Christopher Nolan    2014  10         Laxman\n" +
+                "Harry Potter    David Yates          2010  9          Ram\n", outContent.toString());
+    }
 
     @After
     public void cleanUpStreams() {

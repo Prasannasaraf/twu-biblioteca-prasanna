@@ -37,11 +37,11 @@ public class BibliotecaApp {
         users.add(user1);
         users.add(user2);
 
-        Login login = new Login(users, view);
         Library booksLibrary = new Library(books, checkedBooks);
         Library moviesLibrary = new Library(movies, checkedMovies);
+        Login login = new Login(users, view, parser, booksLibrary, moviesLibrary);
 
-        BibliotecaController bibliotecaController = new BibliotecaController(view, booksLibrary, moviesLibrary, login, parser);
+        BibliotecaController bibliotecaController = new BibliotecaController(view, booksLibrary, moviesLibrary, parser, users);
         bibliotecaController.start();
     }
 }

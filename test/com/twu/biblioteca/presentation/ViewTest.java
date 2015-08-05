@@ -65,9 +65,10 @@ public class ViewTest {
     public void shouldDisplayMenuOptions() {
         View view = new View();
 
-        view.show(Messages.menu);
+        view.show(Messages.librarianMenu);
 
-        assertEquals("\n\t\tMenu\n" +
+        assertEquals("\n~~~~~~~~~~~~Menu~~~~~~~~~~~~\n" +
+                "==============================\n"+
                 "[0] Quit\n" +
                 "[1] List Of Available Books\n" +
                 "[2] Checkout Book\n" +
@@ -79,6 +80,8 @@ public class ViewTest {
                 "[8] List Of CheckedOut Books\n" +
                 "[9] List Of CheckedOut Movies\n" +
                 "[10] List Of Users\n" +
+                "[11] LogOut\n" +
+                "==============================\n"+
                 "Enter Your Option :\n", outContent.toString());
     }
 

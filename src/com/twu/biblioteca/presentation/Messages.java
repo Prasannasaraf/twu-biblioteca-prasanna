@@ -5,7 +5,10 @@ public enum Messages {
     invalidOption("Select a valid option!"),
     enterBookName("Enter the Book Name:"),
     enterMovieName("Enter the Movie Name:"),
+    enterUserName("Enter User Name"),
+    enterPassword("Enter Password"),
 
+    errLogin("Incorrect Username Or Password"),
     successfulBookCheckout("Thank you! Enjoy the book"),
     successfulMovieCheckout("Thank you! Enjoy the Movie"),
     successfulBookCheckIn("Thank you for returning the book."),
@@ -27,7 +30,15 @@ public enum Messages {
     listOfCheckedOutMovies("List of CheckedOutMovies"),
     listOfUsers("List of Users"),
 
-    menu("\n\t\tMenu\n" +
+    loginMenu("\n~~~~~~~~~~~~~Menu~~~~~~~~~~~~~\n" +
+            "==============================\n" +
+            "[0] Quit                    \n" +
+            "[1] Login                   \n" +
+            "==============================\n" +
+            "Enter Your Option :"),
+
+    librarianMenu("\n~~~~~~~~~~~~Menu~~~~~~~~~~~~\n" +
+            "==============================\n"+
             "[0] Quit\n" +
             "[1] List Of Available Books\n" +
             "[2] Checkout Book\n" +
@@ -39,17 +50,22 @@ public enum Messages {
             "[8] List Of CheckedOut Books\n" +
             "[9] List Of CheckedOut Movies\n" +
             "[10] List Of Users\n" +
+            "[11] LogOut\n" +
+            "==============================\n"+
             "Enter Your Option :"),
 
-    menu1("\n\t\tMenu\n" +
+    userMenu("\n~~~~~~~~~~~~Menu~~~~~~~~~~~~\n" +
+            "==============================\n" +
             "[0] Quit\n" +
             "[1] List Of Available Books\n" +
             "[2] Checkout Book\n" +
             "[3] CheckIn Book\n" +
             "[4] List Of Available Movies\n" +
             "[5] CheckOut Movie\n" +
-            "[7] My Profile\n" +
             "[6] CheckIn Movie\n" +
+            "[7] My Profile\n" +
+            "[8] LogOut\n" +
+            "==============================\n" +
             "Enter Your Option :");
 
     private String message;

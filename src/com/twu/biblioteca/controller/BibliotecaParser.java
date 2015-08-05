@@ -35,6 +35,9 @@ public class BibliotecaParser {
             case "9":
                 if (user.isLibrarian())
                     return new DisplayCheckedOutList(view, moviesLibrary.getCheckedOutItems(), Messages.listOfCheckedOutMovies, Messages.checkedOutMoviesHeader);
+            case "10":
+                if (user.isLibrarian())
+                    return new DisplayListOfUsers(view, login.getUsers(), Messages.listOfUsers, Messages.userHeader );
             default:
                 return new InvalidOption(view);
         }

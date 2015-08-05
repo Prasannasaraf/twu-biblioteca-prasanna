@@ -87,6 +87,13 @@ public class BibliotecaParserTest {
     }
 
     @Test
+    public void shouldGiveDisplayUserListObjecton10AsInputWhenUserIsLibrarian() {
+        when(user.isLibrarian()).thenReturn(true);
+
+        assertEquals(DisplayListOfUsers.class, bibliotecaParser.parse("10", view, library, moviesLibrary, user, login).getClass());
+    }
+
+    @Test
     public void shouldGiveInvalidOptionObject() {
         assertEquals(InvalidOption.class, bibliotecaParser.parse("90", view, library, moviesLibrary, user, login).getClass());
     }

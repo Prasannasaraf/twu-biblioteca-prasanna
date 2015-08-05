@@ -3,6 +3,7 @@ package com.twu.biblioteca.presentation;
 import com.twu.biblioteca.model.Book;
 import com.twu.biblioteca.model.Item;
 import com.twu.biblioteca.model.Library;
+import com.twu.biblioteca.model.User;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -10,6 +11,7 @@ import org.junit.Test;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import static org.junit.Assert.assertEquals;
 
@@ -43,7 +45,8 @@ public class ViewTest {
         ArrayList<Item> checkOutBooks = new ArrayList<>();
         books.add(book1);
         books.add(book2);
-        Library bookLibrary = new Library(books, checkOutBooks);
+        HashMap<Item,User> checkedBooks = new HashMap<>();
+        Library bookLibrary = new Library(books, checkOutBooks, checkedBooks);
 
         view.displayListOfItems(bookLibrary.getItems(), Messages.listOfBooks, Messages.booksHeader);
         assertEquals("List of Books\nName            Author          Year \nRed Jhon        Martin          2004 \nSuccess         Ricky           1994 \n", outContent.toString());
@@ -111,6 +114,16 @@ public class ViewTest {
         view.show(Messages.unsuccessfulBookCheckIn);
 
         assertEquals("That is not a valid book to return.\n", outContent.toString());
+    }
+
+    @Test
+    public void shouldDisplayUserInformation() {
+        View view = new View();
+        User user = new User("Ram", "ramprasad@twu.com", "619", "123-4567", "ramRam", true);
+
+        view.showUserInformation(user);
+
+        assertEquals("Ram ramprasad@twu.com 619\n",outContent.toString());
     }
 
     @Test

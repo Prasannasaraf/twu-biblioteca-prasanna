@@ -1,6 +1,7 @@
 package com.twu.biblioteca.presentation;
 
 import com.twu.biblioteca.model.Item;
+import com.twu.biblioteca.model.User;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -24,5 +25,9 @@ public class View {
         for (Item item : items) {
             System.out.println(item);
         }
+    }
+
+    public void showUserInformation(User user) {
+        System.out.println(user);
     }
 }

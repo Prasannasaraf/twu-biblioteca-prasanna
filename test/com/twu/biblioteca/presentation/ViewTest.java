@@ -122,7 +122,7 @@ public class ViewTest {
 
         view.showUserInformation(user);
 
-        assertEquals("Ram ramprasad@twu.com 619\n", outContent.toString());
+        assertEquals("Ram        ramprasad@twu.com    619            \n", outContent.toString());
     }
 
     @Test
@@ -141,6 +141,23 @@ public class ViewTest {
                 "Name            Director             year  ratings    Borrower       \n" +
                 "InterStellar    Christopher Nolan    2014  10         Laxman\n" +
                 "Harry Potter    David Yates          2010  9          Ram\n", outContent.toString());
+    }
+
+    @Test
+    public void shouldDisplayListOfUsers() {
+        View view = new View();
+        ArrayList<User> users = new ArrayList<>();
+        User user1 = new User("Ram", "ramprasad@twu.com", "619", "123-4567", "ramRam", true);
+        User user2 = new User("Laxman", "laxmanrasad@twu.com", "916", "765-4321", "laxMan", false);
+
+        users.add(user1);
+        users.add(user2);
+        view.displayListOfUsers(users, Messages.listOfUsers, Messages.userHeader);
+
+        assertEquals("List of Users\n" +
+                "Name       Email Address        Phone No       \n" +
+                "Ram        ramprasad@twu.com    619            \n" +
+                "Laxman     laxmanrasad@twu.com  916            \n", outContent.toString());
     }
 
     @After

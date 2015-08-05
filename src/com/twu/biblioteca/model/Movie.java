@@ -17,7 +17,7 @@ public class Movie implements Item{
 
     @Override
     public String toString() {
-        return String.format("%-15s %-20s %-5s %-2s", name, director, year, ratings);
+        return String.format("%-15s %-20s %-5s %-10s", name, director, year, ratings);
     }
 
     public boolean hasTitle(String movieName) {

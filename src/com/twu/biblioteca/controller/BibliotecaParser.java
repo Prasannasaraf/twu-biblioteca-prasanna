@@ -12,16 +12,28 @@ import java.util.ArrayList;
 
 //Returns Domain Objects
 public class BibliotecaParser {
-    public Operations parse(String userInput, View view, Library bookLibrary, Library moviesLibrary, User user, Login login) {
+    private final View view;
+    private final Library booksLibrary;
+    private final Library moviesLibrary;
+    private final ArrayList<User> users;
+
+    public BibliotecaParser(View view, Library booksLibrary, Library moviesLibrary, ArrayList<User> users) {
+        this.view = view;
+        this.booksLibrary = booksLibrary;
+        this.moviesLibrary = moviesLibrary;
+        this.users = users;
+    }
+
+    public Operations parse(String userInput, User user, Login login) {
         switch (userInput) {
             case "0":
                 return new Quit();
             case "1":
-                return new Display(view, bookLibrary.getItems(), Messages.listOfBooks, Messages.booksHeader);
+                return new Display(view, booksLibrary.getItems(), Messages.listOfBooks, Messages.booksHeader);
             case "2":
-                return new CheckOut(view, bookLibrary, Messages.enterBookName, Messages.successfulBookCheckout, Messages.unsuccessfulBookCheckOut, user);
+                return new CheckOut(view, booksLibrary, Messages.enterBookName, Messages.successfulBookCheckout, Messages.unsuccessfulBookCheckOut, user);
             case "3":
-                return new CheckIn(view, bookLibrary, Messages.enterBookName, Messages.successfulBookCheckIn, Messages.unsuccessfulBookCheckIn, user);
+                return new CheckIn(view, booksLibrary, Messages.enterBookName, Messages.successfulBookCheckIn, Messages.unsuccessfulBookCheckIn, user);
             case "4":
                 return new Display(view, moviesLibrary.getItems(), Messages.listOfMovies, Messages.moviesHeader);
             case "5":
@@ -32,7 +44,7 @@ public class BibliotecaParser {
                 return new DisplayUserInformation(view, user);
             case "8":
                 if (user.isLibrarian())
-                    return new DisplayCheckedOutList(view, bookLibrary.getCheckedOutItems(), Messages.listOfCheckedOutBooks, Messages.checkedOutBooksHeader);
+                    return new DisplayCheckedOutList(view, booksLibrary.getCheckedOutItems(), Messages.listOfCheckedOutBooks, Messages.checkedOutBooksHeader);
                 return new NullObject();
             case "9":
                 if (user.isLibrarian())
@@ -48,23 +60,23 @@ public class BibliotecaParser {
         }
     }
 
-    public Operations parse(View view, Library bookLibrary, Library moviesLibrary, User user, Login login) {
+    public Operations parse(User user, Login login) {
         if (user == null) {
             return new IncorrectLogin(view);
         }
         if (user.isLibrarian()) {
-            return new UserController(view, bookLibrary, moviesLibrary, user, this, login, Messages.librarianMenu);
+            return new UserController(view, booksLibrary, moviesLibrary, user, this, login, Messages.librarianMenu);
         } else {
-            return new UserController(view, bookLibrary, moviesLibrary, user, this, login, Messages.userMenu);
+            return new UserController(view, booksLibrary, moviesLibrary, user, this, login, Messages.userMenu);
         }
     }
 
-    public Operations parse(String input, View view, Library bookLibrary, Library moviesLibrary, BibliotecaParser parser, ArrayList<User> users) {
+    public Operations parse(String input) {
         switch (input) {
             case "0":
                 return new Quit();
             case "1":
-                return new Login(users, view, parser, bookLibrary, moviesLibrary);
+                return new Login(users, view, this);
             default:
                 return new InvalidOption(view);
         }

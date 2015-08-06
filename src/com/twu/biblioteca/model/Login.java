@@ -11,15 +11,11 @@ public class Login implements Operations {
     private final ArrayList<User> users;
     private final View view;
     private final BibliotecaParser parser;
-    private Library bookLibrary;
-    private Library movieLibrary;
 
-    public Login(ArrayList<User> users, View view, BibliotecaParser parser, Library bookLibrary, Library movieLibrary) {
+    public Login(ArrayList<User> users, View view, BibliotecaParser parser) {
         this.users = users;
         this.view = view;
         this.parser = parser;
-        this.bookLibrary = bookLibrary;
-        this.movieLibrary = movieLibrary;
     }
 
     public User authenticate() {
@@ -41,7 +37,7 @@ public class Login implements Operations {
     @Override
     public void execute() {
         User user = authenticate();
-        Operations operations = parser.parse(view, bookLibrary, movieLibrary, user, this);
+        Operations operations = parser.parse(user, this);
         operations.execute();
     }
 }

@@ -1,6 +1,7 @@
 package com.twu.biblioteca.operations;
 
 import com.twu.biblioteca.model.User;
+import com.twu.biblioteca.presentation.Messages;
 import com.twu.biblioteca.presentation.View;
 
 
@@ -15,6 +16,7 @@ public class DisplayUserInformation implements Operations {
 
     @Override
     public void execute() {
+        view.show(Messages.userHeader);
         view.showUserInformation(user);
     }
 }

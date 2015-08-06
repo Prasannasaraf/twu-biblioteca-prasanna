@@ -136,15 +136,12 @@ public class ViewTest {
         View view = new View();
         HashMap<Item, String> checkedOutItems = new HashMap<>();
         Movie movie1 = new Movie("Harry Potter", "2010", "David Yates", "9");
-        Movie movie2 = new Movie("InterStellar", "2014", "Christopher Nolan", "10");
 
         checkedOutItems.put(movie1, "Ram");
-        checkedOutItems.put(movie2, "Laxman");
         view.displayCheckedOutList(checkedOutItems, Messages.listOfCheckedOutMovies, Messages.checkedOutMoviesHeader);
 
         assertEquals("List of CheckedOutMovies\n" +
                 "Name            Director             year  ratings    Borrower       \n" +
-                "InterStellar    Christopher Nolan    2014  10         Laxman\n" +
                 "Harry Potter    David Yates          2010  9          Ram\n", outContent.toString());
     }
 

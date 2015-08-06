@@ -34,7 +34,7 @@ public class UserController implements Operations {
         while (!((userInput.equals("8") && !user.isLibrarian()) || (userInput.equals("11") && user.isLibrarian()))) {
             view.show(menu);
             userInput = view.getInput();
-            Operations operations = parser.parse(userInput, view, bookLibrary, moviesLibrary, user, login);
+            Operations operations = parser.parse(userInput, user, login);
             operations.execute();
         }
     }

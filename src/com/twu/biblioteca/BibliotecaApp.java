@@ -22,13 +22,10 @@ public class BibliotecaApp {
         User user2 = new User("Laxman", "laxmanrasad@twu.com", "916", "765-4321", "laxMan", false);
 
         ArrayList<Item> books = new ArrayList<>();
-        ArrayList<Item> checkOutBooks = new ArrayList<>();
         ArrayList<Item> movies = new ArrayList<>();
-        ArrayList<Item> checkedOutMovies = new ArrayList<>();
         HashMap<Item, String> checkedMovies = new HashMap<>();
         HashMap<Item, String> checkedBooks = new HashMap<>();
         ArrayList<User> users = new ArrayList<>();
-        BibliotecaParser parser = new BibliotecaParser();
 
         books.add(book1);
         books.add(book2);
@@ -39,9 +36,10 @@ public class BibliotecaApp {
 
         Library booksLibrary = new Library(books, checkedBooks);
         Library moviesLibrary = new Library(movies, checkedMovies);
-        Login login = new Login(users, view, parser, booksLibrary, moviesLibrary);
 
-        BibliotecaController bibliotecaController = new BibliotecaController(view, booksLibrary, moviesLibrary, parser, users);
+        BibliotecaParser parser = new BibliotecaParser(view, booksLibrary, moviesLibrary, users);
+
+        BibliotecaController bibliotecaController = new BibliotecaController(view, parser);
         bibliotecaController.start();
     }
 }

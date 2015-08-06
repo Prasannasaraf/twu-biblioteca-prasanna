@@ -33,13 +33,13 @@ public class BibliotecaParser {
             case "8":
                 if (user.isLibrarian())
                     return new DisplayCheckedOutList(view, bookLibrary.getCheckedOutItems(), Messages.listOfCheckedOutBooks, Messages.checkedOutBooksHeader);
-                 return new NullObject();
+                return new NullObject();
             case "9":
                 if (user.isLibrarian())
                     return new DisplayCheckedOutList(view, moviesLibrary.getCheckedOutItems(), Messages.listOfCheckedOutMovies, Messages.checkedOutMoviesHeader);
             case "10":
                 if (user.isLibrarian())
-                    return new DisplayListOfUsers(view, login.getUsers(), Messages.listOfUsers, Messages.userHeader );
+                    return new DisplayListOfUsers(view, login.getUsers(), Messages.listOfUsers, Messages.userHeader);
             case "11":
                 if (user.isLibrarian())
                     return new NullObject();

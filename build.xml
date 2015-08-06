@@ -22,7 +22,7 @@
     <target name="runjunit" depends="compile">
         <junit haltonfailure="true" printsummary="true" showoutput="yes">
             <test name="com.twu.biblioteca.controller.BibliotecaParserTest"/>
-            <test name="com.twu.biblioteca.controller.IncorrectLoginTest"/>
+            <test name="com.twu.biblioteca.operations.IncorrectLoginTest"/>
             <test name="com.twu.biblioteca.model.BookTest"/>
             <test name="com.twu.biblioteca.model.LibraryTest"/>
             <test name="com.twu.biblioteca.model.LoginTest"/>

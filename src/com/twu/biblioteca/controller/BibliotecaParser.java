@@ -3,6 +3,7 @@ package com.twu.biblioteca.controller;
 
 import com.twu.biblioteca.model.Library;
 import com.twu.biblioteca.model.Login;
+import com.twu.biblioteca.model.LoginController;
 import com.twu.biblioteca.model.User;
 import com.twu.biblioteca.operations.*;
 import com.twu.biblioteca.presentation.Messages;
@@ -16,15 +17,17 @@ public class BibliotecaParser {
     private final Library booksLibrary;
     private final Library moviesLibrary;
     private final ArrayList<User> users;
+    private final Login login;
 
-    public BibliotecaParser(View view, Library booksLibrary, Library moviesLibrary, ArrayList<User> users) {
+    public BibliotecaParser(View view, Library booksLibrary, Library moviesLibrary, ArrayList<User> users, Login login) {
         this.view = view;
         this.booksLibrary = booksLibrary;
         this.moviesLibrary = moviesLibrary;
         this.users = users;
+        this.login = login;
     }
 
-    public Operations parse(String userInput, User user, Login login) {
+    public Operations parse(String userInput, User user, LoginController loginController) {
         switch (userInput) {
             case "0":
                 return new Quit();
@@ -60,14 +63,14 @@ public class BibliotecaParser {
         }
     }
 
-    public Operations parse(User user, Login login) {
+    public Operations parse(User user, LoginController loginController) {
         if (user == null) {
             return new IncorrectLogin(view);
         }
         if (user.isLibrarian()) {
-            return new UserController(view, booksLibrary, moviesLibrary, user, this, login, Messages.librarianMenu);
+            return new UserController(view, booksLibrary, moviesLibrary, user, this, loginController, Messages.librarianMenu);
         } else {
-            return new UserController(view, booksLibrary, moviesLibrary, user, this, login, Messages.userMenu);
+            return new UserController(view, booksLibrary, moviesLibrary, user, this, loginController, Messages.userMenu);
         }
     }
 
@@ -76,7 +79,7 @@ public class BibliotecaParser {
             case "0":
                 return new Quit();
             case "1":
-                return new Login(users, view, this);
+                return new LoginController(this, login);
             default:
                 return new InvalidOption(view);
         }

@@ -157,7 +157,8 @@ public class ViewTest {
         view.displayListOfUsers(users, Messages.listOfUsers, Messages.userHeader);
 
         assertEquals("List of Users\n" +
-                "Name       Email Address        Phone No       \n" +
+                "Name       Email Address        PhoneNo        \n" +
+                "----------------------------------------\n" +
                 "Ram        ramprasad@twu.com    619            \n" +
                 "Laxman     laxmanrasad@twu.com  916            \n", outContent.toString());
     }

@@ -27,4 +27,8 @@ public class Login {
         }
         return null;
     }
+
+    public ArrayList<User> getUsers() {
+        return users;
+    }
 }

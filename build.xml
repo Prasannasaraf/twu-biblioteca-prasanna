@@ -11,6 +11,7 @@
 
     <target name="clean">
         <delete dir="build"/>
+        <delete file="lib/app.jar" />
     </target>
 
     <target name="compile">
@@ -19,15 +20,16 @@
         </javac>
     </target>
 
-    <target name="runjunit" depends="compile">
+    <target name="runJunit" depends="compile">
         <junit haltonfailure="true" printsummary="true" showoutput="yes">
             <test name="com.twu.biblioteca.controller.BibliotecaParserTest"/>
-            <test name="com.twu.biblioteca.operations.IncorrectLoginTest"/>
+            <test name="com.twu.biblioteca.operations.IncorrectLoginControllerTest"/>
             <test name="com.twu.biblioteca.model.BookTest"/>
             <test name="com.twu.biblioteca.model.LibraryTest"/>
-            <test name="com.twu.biblioteca.model.LoginTest"/>
+            <test name="com.twu.biblioteca.model.LoginControllerTest"/>
             <test name="com.twu.biblioteca.model.MovieTest"/>
             <test name="com.twu.biblioteca.model.UserTest"/>
+            <test name="com.twu.biblioteca.model.LoginTest"/>
             <test name="com.twu.biblioteca.operations.CheckInTest"/>
             <test name="com.twu.biblioteca.operations.CheckOutTest"/>
             <test name="com.twu.biblioteca.operations.DisplayCheckedOutListTest"/>
@@ -44,14 +46,14 @@
         </junit>
     </target>
 
-    <target name="createjar" depends="runjunit">
+    <target name="createJar" depends="runJunit">
         <jar destfile="lib/app.jar"
              basedir="build"
              excludes="**/Test.class"
                 />
     </target>
 
-    <target name="run" depends="createjar">
+    <target name="run" depends="createJar">
         <java classname="com.twu.biblioteca.BibliotecaApp">
             <arg value="-h"/>
             <classpath>

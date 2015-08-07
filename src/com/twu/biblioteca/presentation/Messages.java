@@ -22,7 +22,7 @@ public enum Messages {
     checkedOutBooksHeader(String.format("%-15s %-15s %-5s %-15s\n", "Name", "Author", "Year", "Borrower")),
     moviesHeader(String.format("%-15s %-20s %-5s %-2s\n", "Name", "Director", "year", "ratings")),
     checkedOutMoviesHeader(String.format("%-15s %-20s %-5s %-10s %-15s\n", "Name", "Director", "year", "ratings", "Borrower")),
-    userHeader(String.format("%-10s %-20s %-15s", "Name", "Email Address", "Phone No")),
+    userHeader(String.format("%-10s %-20s %-15s\n----------------------------------------", "Name", "Email Address", "PhoneNo")),
 
     listOfBooks("List of Books"),
     listOfMovies("List of Movies"),

@@ -37,7 +37,8 @@ public class BibliotecaApp {
         Library booksLibrary = new Library(books, checkedBooks);
         Library moviesLibrary = new Library(movies, checkedMovies);
 
-        BibliotecaParser parser = new BibliotecaParser(view, booksLibrary, moviesLibrary, users);
+        Login login = new Login(view, users);
+        BibliotecaParser parser = new BibliotecaParser(view, booksLibrary, moviesLibrary, users, login);
 
         BibliotecaController bibliotecaController = new BibliotecaController(view, parser);
         bibliotecaController.start();

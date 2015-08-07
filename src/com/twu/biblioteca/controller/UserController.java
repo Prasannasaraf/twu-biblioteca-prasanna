@@ -1,7 +1,7 @@
 package com.twu.biblioteca.controller;
 
 import com.twu.biblioteca.model.Library;
-import com.twu.biblioteca.model.Login;
+import com.twu.biblioteca.model.LoginController;
 import com.twu.biblioteca.model.User;
 import com.twu.biblioteca.operations.Operations;
 import com.twu.biblioteca.presentation.Messages;
@@ -15,16 +15,16 @@ public class UserController implements Operations {
     private final Library moviesLibrary;
     private final User user;
     private final BibliotecaParser parser;
-    private final Login login;
+    private final LoginController loginController;
     private final Messages menu;
 
-    public UserController(View view, Library bookLibrary, Library moviesLibrary, User user, BibliotecaParser parser, Login login, Messages menu) {
+    public UserController(View view, Library bookLibrary, Library moviesLibrary, User user, BibliotecaParser parser, LoginController loginController, Messages menu) {
         this.view = view;
         this.bookLibrary = bookLibrary;
         this.moviesLibrary = moviesLibrary;
         this.user = user;
         this.parser = parser;
-        this.login = login;
+        this.loginController = loginController;
         this.menu = menu;
     }
 
@@ -34,7 +34,7 @@ public class UserController implements Operations {
         while (!((userInput.equals("8") && !user.isLibrarian()) || (userInput.equals("11") && user.isLibrarian()))) {
             view.show(menu);
             userInput = view.getInput();
-            Operations operations = parser.parse(userInput, user, login);
+            Operations operations = parser.parse(userInput, user, loginController);
             operations.execute();
         }
     }

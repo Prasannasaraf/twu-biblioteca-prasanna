@@ -2,6 +2,7 @@ package com.twu.biblioteca.controller;
 
 import com.twu.biblioteca.model.Library;
 import com.twu.biblioteca.model.Login;
+import com.twu.biblioteca.model.LoginController;
 import com.twu.biblioteca.model.User;
 import com.twu.biblioteca.operations.*;
 import com.twu.biblioteca.presentation.View;
@@ -22,8 +23,9 @@ public class BibliotecaParserTest {
     View view;
     Library bookLibrary;
     User user;
-    Login login;
+    LoginController loginController;
     private ArrayList<User> users;
+    private Login login;
 
     @Before
     public void setUp() {
@@ -31,91 +33,92 @@ public class BibliotecaParserTest {
         bookLibrary = mock(Library.class);
         moviesLibrary = mock(Library.class);
         user = mock(User.class);
-        login = mock(Login.class);
+        loginController = mock(LoginController.class);
         users = mock(ArrayList.class);
-        bibliotecaParser = new BibliotecaParser(view, bookLibrary, moviesLibrary, users);
+        login = mock(Login.class);
+        bibliotecaParser = new BibliotecaParser(view, bookLibrary, moviesLibrary, users, login);
     }
 
     @Test
     public void shouldGiveQuitObject() {
-        assertEquals(Quit.class, bibliotecaParser.parse("0", user, login).getClass());
+        assertEquals(Quit.class, bibliotecaParser.parse("0", user, loginController).getClass());
     }
 
     @Test
     public void shouldReturnDisplayBooksObject() {
-        assertEquals(Display.class, bibliotecaParser.parse("1", user, login).getClass());
+        assertEquals(Display.class, bibliotecaParser.parse("1", user, loginController).getClass());
     }
 
     @Test
     public void shouldGiveCheckoutObject() {
-        assertEquals(CheckOut.class, bibliotecaParser.parse("2", user, login).getClass());
+        assertEquals(CheckOut.class, bibliotecaParser.parse("2", user, loginController).getClass());
     }
 
     @Test
     public void shouldGiveCheckInObject() {
-        assertEquals(CheckIn.class, bibliotecaParser.parse("3", user, login).getClass());
+        assertEquals(CheckIn.class, bibliotecaParser.parse("3", user, loginController).getClass());
     }
 
     @Test
     public void shouldReturnDisplayMoviesObject() {
-        assertEquals(Display.class, bibliotecaParser.parse("4", user, login).getClass());
+        assertEquals(Display.class, bibliotecaParser.parse("4", user, loginController).getClass());
     }
 
     @Test
     public void shouldGiveCheckoutObjectOn5AsInput() {
-        assertEquals(CheckOut.class, bibliotecaParser.parse("5", user, login).getClass());
+        assertEquals(CheckOut.class, bibliotecaParser.parse("5", user, loginController).getClass());
     }
 
     @Test
     public void shouldGiveCheckInObjectOn6AsInput() {
-        assertEquals(CheckIn.class, bibliotecaParser.parse("6", user, login).getClass());
+        assertEquals(CheckIn.class, bibliotecaParser.parse("6", user, loginController).getClass());
     }
 
     @Test
     public void shouldGiveDisplayUserInformationObjectOn7AsInput() {
-        assertEquals(DisplayUserInformation.class, bibliotecaParser.parse("7", user, login).getClass());
+        assertEquals(DisplayUserInformation.class, bibliotecaParser.parse("7", user, loginController).getClass());
     }
 
     @Test
     public void shouldGiveDisplayCheckOutListObjectOn8AsInput() {
         when(user.isLibrarian()).thenReturn(true);
 
-        assertEquals(DisplayCheckedOutList.class, bibliotecaParser.parse("8", user, login).getClass());
+        assertEquals(DisplayCheckedOutList.class, bibliotecaParser.parse("8", user, loginController).getClass());
     }
 
     @Test
     public void shouldGiveInvalidOptionObjectOn9AsInputWhenUserIsNotLibrarian() {
         when(user.isLibrarian()).thenReturn(false);
 
-        assertEquals(InvalidOption.class, bibliotecaParser.parse("9", user, login).getClass());
+        assertEquals(InvalidOption.class, bibliotecaParser.parse("9", user, loginController).getClass());
     }
 
     @Test
     public void shouldGiveDisplayUserListObjectOn10AsInputWhenUserIsLibrarian() {
         when(user.isLibrarian()).thenReturn(true);
 
-        assertEquals(DisplayListOfUsers.class, bibliotecaParser.parse("10", user, login).getClass());
+        assertEquals(DisplayListOfUsers.class, bibliotecaParser.parse("10", user, loginController).getClass());
     }
 
     @Test
     public void shouldGiveNullObjectOnLogOut() {
         when(user.isLibrarian()).thenReturn(false);
 
-        assertEquals(NullObject.class, bibliotecaParser.parse("8", user, login).getClass());
+        assertEquals(NullObject.class, bibliotecaParser.parse("8", user, loginController).getClass());
     }
 
     @Test
     public void shouldGiveInvalidOptionObject() {
-        assertEquals(InvalidOption.class, bibliotecaParser.parse("90", user, login).getClass());
+        assertEquals(InvalidOption.class, bibliotecaParser.parse("90", user, loginController).getClass());
     }
 
     @Test
     public void shouldGiveUserControllerWhenUserExists() {
-        assertEquals(UserController.class, bibliotecaParser.parse(user, login).getClass());
+        assertEquals(UserController.class, bibliotecaParser.parse(user, loginController).getClass());
     }
 
     @Test
     public void shouldGiveLoginObjectOn1AsOptionInLoginMenu() {
-        assertEquals(Login.class, bibliotecaParser.parse("1").getClass());
+        assertEquals(LoginController.class, bibliotecaParser.parse("1").getClass());
     }
 }

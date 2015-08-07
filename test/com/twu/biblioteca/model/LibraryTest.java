@@ -9,21 +9,21 @@ import static org.junit.Assert.assertEquals;
 
 
 public class LibraryTest {
-    ArrayList<Item> books;
-    ArrayList<Item> books1;
-    Book book1;
-    Book book2;
-    Book book3;
-    Book book4;
-    Library bookLibrary;
+    private ArrayList<Item> books;
+    private ArrayList<Item> books1;
+    private Book book1;
+    private Book book2;
+    private Book book3;
+    private Book book4;
+    private Library bookLibrary;
 
-    ArrayList<Item> movies;
-    ArrayList<Item> movies1;
-    Movie movie1;
-    Movie movie2;
-    Movie movie3;
-    Movie movie4;
-    Library movieLibrary;
+    private ArrayList<Item> movies;
+    private ArrayList<Item> movies1;
+    private Movie movie1;
+    private Movie movie2;
+    private Movie movie3;
+    private Movie movie4;
+    private Library movieLibrary;
     private HashMap<Item, String> checkedOutBooks;
     private HashMap<Item, String> checkedOutMovies;
     private String user;

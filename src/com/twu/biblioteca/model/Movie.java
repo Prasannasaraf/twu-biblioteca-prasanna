@@ -3,10 +3,11 @@ package com.twu.biblioteca.model;
 
 //Movie has name, year, director and ratings
 public class Movie implements Item{
-    private String name;
-    private String year;
-    private String director;
-    private String ratings;
+
+    private final String name;
+    private final String ratings;
+    private final String director;
+    private final String year;
 
     public Movie(String name, String year, String director, String ratings) {
         this.name = name;

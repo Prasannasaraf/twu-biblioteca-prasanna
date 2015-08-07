@@ -6,15 +6,16 @@ import java.util.HashMap;
 
 //Library can have  Books or Movies.
 public class Library {
-    private  ArrayList<Item> items;
-    private HashMap<Item, String> checkedOutItems;
+
+    private final ArrayList<Item> items;
+    private final HashMap<Item, String> checkedOutItems;
 
     public Library(ArrayList<Item> items, HashMap<Item, String> checkedOutItems) {
         this.items = items;
         this.checkedOutItems = checkedOutItems;
     }
 
-    public  ArrayList<Item> getItems() {
+    public ArrayList<Item> getItems() {
         return items;
     }
 

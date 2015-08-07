@@ -6,6 +6,8 @@ import com.twu.biblioteca.presentation.View;
 
 import java.util.HashMap;
 
+
+//Used to Display CheckedOut List.
 public class DisplayCheckedOutList implements Operations {
     private final View view;
     private final HashMap<Item, String> checkedOutItems;

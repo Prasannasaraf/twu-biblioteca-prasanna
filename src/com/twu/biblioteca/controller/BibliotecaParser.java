@@ -8,6 +8,7 @@ import com.twu.biblioteca.operations.*;
 import com.twu.biblioteca.presentation.Messages;
 import com.twu.biblioteca.presentation.View;
 
+
 //Returns Domain Objects
 public class BibliotecaParser {
     private final View view;
@@ -63,9 +64,9 @@ public class BibliotecaParser {
             return new IncorrectLogin(view);
         }
         if (user.isLibrarian()) {
-            return new UserController(view, booksLibrary, moviesLibrary, user, this, loginController, Messages.librarianMenu);
+            return new UserController(view, user, this, Messages.librarianMenu);
         } else {
-            return new UserController(view, booksLibrary, moviesLibrary, user, this, loginController, Messages.userMenu);
+            return new UserController(view, user, this, Messages.userMenu);
         }
     }
 

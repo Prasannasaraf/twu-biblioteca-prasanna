@@ -5,6 +5,7 @@ import com.twu.biblioteca.presentation.Messages;
 import com.twu.biblioteca.presentation.View;
 
 
+//Display single User Information.
 public class DisplayUserInformation implements Operations {
     private final View view;
     private final User user;

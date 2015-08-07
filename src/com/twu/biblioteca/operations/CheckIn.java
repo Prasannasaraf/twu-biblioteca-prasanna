@@ -1,10 +1,11 @@
 package com.twu.biblioteca.operations;
 
 
+import com.twu.biblioteca.model.Library;
 import com.twu.biblioteca.model.User;
 import com.twu.biblioteca.presentation.Messages;
 import com.twu.biblioteca.presentation.View;
-import com.twu.biblioteca.model.Library;
+
 
 //Checks In book to Library
 public class CheckIn implements Operations {
@@ -13,7 +14,7 @@ public class CheckIn implements Operations {
     private final Messages enterItemName;
     private final Messages successfulItemCheckIn;
     private final Messages unsuccessfulItemCheckIn;
-    private User user;
+    private final User user;
 
     public CheckIn(View view, Library library, Messages enterItemName, Messages successfulItemCheckIn, Messages unsuccessfulItemCheckIn, User user) {
         this.view = view;
@@ -29,8 +30,7 @@ public class CheckIn implements Operations {
         view.show(enterItemName);
         if (library.checkInItem(user.getName(), view.getInput())) {
             view.show(successfulItemCheckIn);
-        }
-        else {
+        } else {
             view.show(unsuccessfulItemCheckIn);
         }
     }

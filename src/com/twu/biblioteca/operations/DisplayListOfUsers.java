@@ -6,6 +6,8 @@ import com.twu.biblioteca.presentation.View;
 
 import java.util.ArrayList;
 
+
+//Display List of Users.
 public class DisplayListOfUsers implements Operations {
     private final View view;
     private final ArrayList<User> users;
@@ -21,6 +23,6 @@ public class DisplayListOfUsers implements Operations {
 
     @Override
     public void execute() {
-        view.displayListOfUsers(users,listOfUsers,userHeader);
+        view.displayListOfUsers(users, listOfUsers, userHeader);
     }
 }

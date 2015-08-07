@@ -1,10 +1,11 @@
 package com.twu.biblioteca.operations;
 
 
+import com.twu.biblioteca.model.Library;
 import com.twu.biblioteca.model.User;
 import com.twu.biblioteca.presentation.Messages;
 import com.twu.biblioteca.presentation.View;
-import com.twu.biblioteca.model.Library;
+
 
 //ChecksOut Book From Library
 public class CheckOut implements Operations {
@@ -27,7 +28,7 @@ public class CheckOut implements Operations {
     @Override
     public void execute() {
         view.show(enterItemName);
-        if (library.checkOutItem(user.getName(), view.getInput())){
+        if (library.checkOutItem(user.getName(), view.getInput())) {
             view.show(successfulItemCheckout);
         } else {
             view.show(unsuccessfulItemCheckOut);

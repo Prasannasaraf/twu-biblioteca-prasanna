@@ -4,9 +4,11 @@ import com.twu.biblioteca.model.Login;
 import com.twu.biblioteca.model.User;
 import com.twu.biblioteca.operations.Operations;
 
+
+//Controller for Admin and User actions.
 public class LoginController implements Operations {
     private final BibliotecaParser parser;
-    private Login login;
+    private final Login login;
 
     public LoginController(BibliotecaParser parser, Login login) {
         this.parser = parser;

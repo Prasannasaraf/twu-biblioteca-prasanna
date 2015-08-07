@@ -38,7 +38,7 @@ public enum Messages {
             "Enter Your Option :"),
 
     librarianMenu("\n~~~~~~~~~~~~Menu~~~~~~~~~~~~\n" +
-            "==============================\n"+
+            "==============================\n" +
             "[0] Quit\n" +
             "[1] List Of Available Books\n" +
             "[2] Checkout Book\n" +
@@ -51,7 +51,7 @@ public enum Messages {
             "[9] List Of CheckedOut Movies\n" +
             "[10] List Of Users\n" +
             "[11] LogOut\n" +
-            "==============================\n"+
+            "==============================\n" +
             "Enter Your Option :"),
 
     userMenu("\n~~~~~~~~~~~~Menu~~~~~~~~~~~~\n" +

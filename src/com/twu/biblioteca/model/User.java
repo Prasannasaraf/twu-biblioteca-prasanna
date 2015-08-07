@@ -1,11 +1,13 @@
 package com.twu.biblioteca.model;
 
+
+//User has Name , Email Id ...
 public class User {
-    String name;
-    String emailAddress;
-    String phoneNumber;
-    String libraryNo;
-    String password;
+    private final String name;
+    private final String emailAddress;
+    private final String phoneNumber;
+    private final String libraryNo;
+    private final String password;
     private final boolean isLibrarian;
 
     public User(String name, String emailAddress, String phoneNumber, String libraryNo, String password, boolean isLibrarian) {

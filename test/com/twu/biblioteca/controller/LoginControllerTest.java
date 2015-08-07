@@ -1,7 +1,7 @@
-package com.twu.biblioteca.model;
+package com.twu.biblioteca.controller;
 
-import com.twu.biblioteca.controller.BibliotecaParser;
-import com.twu.biblioteca.controller.UserController;
+import com.twu.biblioteca.model.Login;
+import com.twu.biblioteca.model.User;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -16,7 +16,6 @@ public class LoginControllerTest {
     private UserController userController;
     private LoginController loginController;
 
-
     @Before
     public void setUp() throws Exception {
         login = mock(Login.class);
@@ -30,7 +29,6 @@ public class LoginControllerTest {
     public void shouldCallUserControllerExecute() {
         when(parser.parse(user, loginController)).thenReturn(userController);
         when(login.authenticate()).thenReturn(user);
-
         loginController.execute();
 
         verify(userController).execute();

@@ -1,13 +1,13 @@
 package com.twu.biblioteca.controller;
 
 import com.twu.biblioteca.model.Library;
-import com.twu.biblioteca.model.LoginController;
 import com.twu.biblioteca.model.User;
 import com.twu.biblioteca.operations.Operations;
 import com.twu.biblioteca.presentation.Messages;
 import com.twu.biblioteca.presentation.View;
 
 
+//Acts as Controller fro User and Admin.
 public class UserController implements Operations {
 
     private final View view;
@@ -34,7 +34,7 @@ public class UserController implements Operations {
         while (!((userInput.equals("8") && !user.isLibrarian()) || (userInput.equals("11") && user.isLibrarian()))) {
             view.show(menu);
             userInput = view.getInput();
-            Operations operations = parser.parse(userInput, user, loginController);
+            Operations operations = parser.parse(userInput, user);
             operations.execute();
         }
     }

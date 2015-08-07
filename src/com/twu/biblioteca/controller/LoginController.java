@@ -1,6 +1,7 @@
-package com.twu.biblioteca.model;
+package com.twu.biblioteca.controller;
 
-import com.twu.biblioteca.controller.BibliotecaParser;
+import com.twu.biblioteca.model.Login;
+import com.twu.biblioteca.model.User;
 import com.twu.biblioteca.operations.Operations;
 
 public class LoginController implements Operations {

@@ -3,31 +3,26 @@ package com.twu.biblioteca.controller;
 
 import com.twu.biblioteca.model.Library;
 import com.twu.biblioteca.model.Login;
-import com.twu.biblioteca.model.LoginController;
 import com.twu.biblioteca.model.User;
 import com.twu.biblioteca.operations.*;
 import com.twu.biblioteca.presentation.Messages;
 import com.twu.biblioteca.presentation.View;
-
-import java.util.ArrayList;
 
 //Returns Domain Objects
 public class BibliotecaParser {
     private final View view;
     private final Library booksLibrary;
     private final Library moviesLibrary;
-    private final ArrayList<User> users;
     private final Login login;
 
-    public BibliotecaParser(View view, Library booksLibrary, Library moviesLibrary, ArrayList<User> users, Login login) {
+    public BibliotecaParser(View view, Library booksLibrary, Library moviesLibrary, Login login) {
         this.view = view;
         this.booksLibrary = booksLibrary;
         this.moviesLibrary = moviesLibrary;
-        this.users = users;
         this.login = login;
     }
 
-    public Operations parse(String userInput, User user, LoginController loginController) {
+    public Operations parse(String userInput, User user) {
         switch (userInput) {
             case "0":
                 return new Quit();

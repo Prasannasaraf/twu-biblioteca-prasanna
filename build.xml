@@ -23,10 +23,10 @@
     <target name="runJunit" depends="compile">
         <junit haltonfailure="true" printsummary="true" showoutput="yes">
             <test name="com.twu.biblioteca.controller.BibliotecaParserTest"/>
+            <test name="com.twu.biblioteca.controller.LoginControllerTest"/>
             <test name="com.twu.biblioteca.operations.IncorrectLoginControllerTest"/>
             <test name="com.twu.biblioteca.model.BookTest"/>
             <test name="com.twu.biblioteca.model.LibraryTest"/>
-            <test name="com.twu.biblioteca.model.LoginControllerTest"/>
             <test name="com.twu.biblioteca.model.MovieTest"/>
             <test name="com.twu.biblioteca.model.UserTest"/>
             <test name="com.twu.biblioteca.model.LoginTest"/>

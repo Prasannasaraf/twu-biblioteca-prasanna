@@ -1,30 +1,38 @@
 package com.twu.biblioteca.model;
 
 import com.twu.biblioteca.controller.BibliotecaParser;
-import com.twu.biblioteca.presentation.View;
+import com.twu.biblioteca.controller.UserController;
+import org.junit.Before;
 import org.junit.Test;
 
-import java.util.ArrayList;
-
-import static org.junit.Assert.assertEquals;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.*;
 
 
 public class LoginControllerTest {
 
-    @Test
-    public void shouldGiveTheUserObject() {
-        View view = mock(View.class);
-        BibliotecaParser parser = mock(BibliotecaParser.class);
-        ArrayList<User> users = new ArrayList<>();
-        User user1 = new User("Ram", "ramprasad@twu.com", "619", "123-4567", "ramRam", true);
-        User user2 = new User("Laxman", "laxmanrasad@twu.com", "916", "765-4321", "laxMan", true);
-        users.add(user1);
-        users.add(user2);
-        LoginController loginController = new LoginController(users, view, parser);
+    private Login login;
+    private BibliotecaParser parser;
+    private User user;
+    private UserController userController;
+    private LoginController loginController;
 
-        when(view.getInput()).thenReturn("123-4567").thenReturn("ramRam");
-        assertEquals(user1, loginController.authenticate());
+
+    @Before
+    public void setUp() throws Exception {
+        login = mock(Login.class);
+        parser = mock(BibliotecaParser.class);
+        user = mock(User.class);
+        userController = mock(UserController.class);
+        loginController = new LoginController(parser, login);
+    }
+
+    @Test
+    public void shouldCallUserControllerExecute() {
+        when(parser.parse(user, loginController)).thenReturn(userController);
+        when(login.authenticate()).thenReturn(user);
+
+        loginController.execute();
+
+        verify(userController).execute();
     }
 }

@@ -13,7 +13,6 @@ import java.util.HashMap;
 import static org.junit.Assert.assertEquals;
 
 
-//Used for Input Output
 public class ViewTest {
     private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
     PrintStream original;

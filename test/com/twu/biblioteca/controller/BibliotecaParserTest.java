@@ -109,7 +109,7 @@ public class BibliotecaParserTest {
 
     @Test
     public void shouldGiveUserControllerWhenUserExists() {
-        assertEquals(UserController.class, bibliotecaParser.parse(user, loginController).getClass());
+        assertEquals(UserController.class, bibliotecaParser.parse(user).getClass());
     }
 
     @Test

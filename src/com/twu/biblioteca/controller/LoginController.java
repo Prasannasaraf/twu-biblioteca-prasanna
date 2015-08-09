@@ -18,7 +18,7 @@ public class LoginController implements Operations {
     @Override
     public void execute() {
         User user = login.authenticate();
-        Operations operations = parser.parse(user, this);
+        Operations operations = parser.parse(user);
         operations.execute();
     }
 }

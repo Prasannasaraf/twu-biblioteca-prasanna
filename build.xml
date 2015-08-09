@@ -11,11 +11,11 @@
 
     <target name="clean">
         <delete dir="build"/>
-        <delete file="lib/app.jar" />
+        <delete file="lib/app.jar"/>
     </target>
 
     <target name="compile">
-        <mkdir dir = "build"/>
+        <mkdir dir="build"/>
         <javac srcdir="src;test" destdir="build" includeantruntime="false" classpathref="classpath">
         </javac>
     </target>
@@ -24,7 +24,7 @@
         <junit haltonfailure="true" printsummary="true" showoutput="yes">
             <test name="com.twu.biblioteca.controller.BibliotecaParserTest"/>
             <test name="com.twu.biblioteca.controller.LoginControllerTest"/>
-            <test name="com.twu.biblioteca.operations.IncorrectLoginControllerTest"/>
+            <test name="com.twu.biblioteca.controller.UserControllerTest"/>
             <test name="com.twu.biblioteca.model.BookTest"/>
             <test name="com.twu.biblioteca.model.LibraryTest"/>
             <test name="com.twu.biblioteca.model.MovieTest"/>
@@ -36,6 +36,7 @@
             <test name="com.twu.biblioteca.operations.DisplayListOfUsersTest"/>
             <test name="com.twu.biblioteca.operations.DisplayTest"/>
             <test name="com.twu.biblioteca.operations.DisplayUserInformationTest"/>
+            <test name="com.twu.biblioteca.operations.IncorrectLoginTest"/>
             <test name="com.twu.biblioteca.operations.InvalidOptionTest"/>
             <test name="com.twu.biblioteca.presentation.MessagesTest"/>
             <test name="com.twu.biblioteca.presentation.ViewTest"/>

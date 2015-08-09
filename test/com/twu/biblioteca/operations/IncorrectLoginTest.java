@@ -8,7 +8,7 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 
 
-public class IncorrectLoginControllerTest {
+public class IncorrectLoginTest {
 
     @Test
     public void shouldCallShowForIncorrectDisplay() {

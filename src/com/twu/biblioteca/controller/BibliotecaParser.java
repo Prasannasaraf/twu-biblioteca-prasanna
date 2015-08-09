@@ -59,7 +59,7 @@ public class BibliotecaParser {
         }
     }
 
-    public Operations parse(User user, LoginController loginController) {
+    public Operations parse(User user) {
         if (user == null) {
             return new IncorrectLogin(view);
         }

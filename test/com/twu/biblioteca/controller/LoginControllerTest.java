@@ -27,7 +27,7 @@ public class LoginControllerTest {
 
     @Test
     public void shouldCallUserControllerExecute() {
-        when(parser.parse(user, loginController)).thenReturn(userController);
+        when(parser.parse(user)).thenReturn(userController);
         when(login.authenticate()).thenReturn(user);
         loginController.execute();
 

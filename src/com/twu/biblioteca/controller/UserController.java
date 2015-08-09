@@ -23,12 +23,16 @@ public class UserController implements Operations {
 
     @Override
     public void execute() {
-        String userInput = "init";
-        while (!((userInput.equals("8") && !user.isLibrarian()) || (userInput.equals("11") && user.isLibrarian()))) {
+        String userInput;
+        do {
             view.show(menu);
             userInput = view.getInput();
             Operations operations = parser.parse(userInput, user);
             operations.execute();
-        }
+        } while (isLogout(userInput));
+    }
+
+    private boolean isLogout(String userInput) {
+        return !((userInput.equals("8") && !user.isLibrarian()) || (userInput.equals("11") && user.isLibrarian()));
     }
 }

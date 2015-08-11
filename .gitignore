@@ -1,8 +1,0 @@
-*.iml
-build/
-out/
-.idea
-.DS_Store
-lib/
-onlyRun.xml
-laundryList
